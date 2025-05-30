@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Red Dawn</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER (fixed) -->
+  <header class="header">
+    <div class="header__inner container">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo.png" alt="Red Dawn Logo">
+      </a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link"><span data-lang="th">หน้าหลัก</span><span data-lang="en">Home</span></a></li>
+          <li><a href="history.html" class="nav__link"><span data-lang="th">ประวัติเมือง</span><span data-lang="en">History</span></a></li>
+          <li><a href="rp-rules.html" class="nav__link"><span data-lang="th">กฎ Roleplay</span><span data-lang="en">RP Rules</span></a></li>
+          <li><a href="city-rules.html" class="nav__link"><span data-lang="th">กฎเมือง</span><span data-lang="en">City Rules</span></a></li>
+          <li><a href="play.html" class="nav__link"><span data-lang="th">เล่นกับเรา</span><span data-lang="en">Play with Us</span></a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button class="btn--icon lang-btn" data-lang="th"><img src="images/thailand-flag.png" alt="TH"></button>
+        <button class="btn--icon lang-btn" data-lang="en"><img src="images/us-flag.png" alt="EN"></button>
+        <button class="btn--primary" id="openModal">
+          <img src="images/discord_logo.png" alt="Discord"> Join Discord
+        </button>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="section container">
+      <h2>กฎเมือง</h2>
+
+      <!-- กฎแก๊ง -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>กฎแก๊ง</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="5">กฎแก๊ง</td>
+              <td>1</td>
+              <td>กำหนดสมาชิกแก๊งให้มีได้ไม่เกิน 5 คน (จะเพิ่มตามสัดส่วนประชากร)</td>
+            </tr>
+            <tr><td>2</td><td>ห้ามมิให้แก๊งใดก็ตามเป็นพันธมิตรกันโดยเด็ดขาด</td></tr>
+            <tr><td>3</td><td>กรณีมีการปะทะกันเกิดขึ้นใจกลางเมืองหรือที่สาธารณะ แก๊งที่ปะทะต้องยอมรับความเสี่ยงของผู้เข้าร่วมใหม่</td></tr>
+            <tr><td>4</td><td>กลุ่มเพื่อน, กลุ่มครอบครัว, กลุ่มแก๊ง, ตระกูล ถือเป็นแก๊งเดียวกัน</td></tr>
+            <tr><td>5</td><td>การทำสตอรี่จำกัดไม่เกิน 5 คน (ปรับตามสัดส่วนประชากร)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- กฎการปล้นผู้เล่น -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>กฎการปล้นผู้เล่น</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="10">กฎการปล้นผู้เล่น</td><td>1</td><td>การปล้นผู้เล่นคนอื่นต้องแสดงเจตนาให้ชัดเจนและแจ้งเหยื่อก่อน มิฉะนั้นห้ามปล้น</td></tr>
+            <tr><td>2</td><td>ระหว่างเจรจาเหยื่อเลือกได้: เจรจา, ยินยอมให้ปล้น, ขัดขืน (ภายใต้กฎ Power Gaming & Value of Life)</td></tr>
+            <tr><td>3</td><td>ห้ามปล้นสิ่งของเกิน 3 ชนิด อาวุธได้ 1 กระบอก (เงินไม่ถือเป็นสิ่งของ)</td></tr>
+            <tr><td>4</td><td>ปล้นเงินได้ไม่เกิน 60% ของเงินเหยื่อ</td></tr>
+            <tr><td>5</td><td>ผู้ปล้นห้ามเปลี่ยนชุด 1 วัน (OC) ต้องอยู่ในเมือง 2 ชม. ถอดหน้ากากได้เฉพาะในเมือง</td></tr>
+            <tr><td>6</td><td>ห้ามปล้นเจ้าหน้าที่หรือหน่วยงานทุกกรณี</td></tr>
+            <tr><td>7</td><td>ห้ามปล้นคู่กรณีหลังถูกสลบโดยไม่เจตนา</td></tr>
+            <tr><td>8</td><td>ต้องมี Lawman อย่างน้อย 2 คนในเมืองขณะปล้น และประกาศใน Discord ตลอด</td></tr>
+            <tr><td>9</td><td>หากเหยื่อยินยอม: ห้ามยิงหรือบังคับถอนเงิน ต้องใช้เชือกมัด</td></tr>
+            <tr><td>10</td><td>หากเหยื่อต่อต้าน: การต่อสู้ถือเป็นการป้องกันตัว (คำนึง PG & VOL)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- กฎการจัดการกับผู้ที่สลบ -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>กฎการจัดการกับผู้ที่สลบ</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="2">กฎการจัดการกับผู้ที่สลบ</td><td>1</td><td>ห้ามนำร่างผู้สลบไปไว้ในที่หมอเข้าถึงยาก เช่น ในน้ำ บ้าน หรือเนินเขา</td></tr>
+            <tr><td>2</td><td>ห้ามนำผู้สลบไปรักษาเพื่อใช้งานใน Story</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- กฎการอุ้ม หรือ เรียกค่าไถ่ -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>กฎการอุ้ม หรือ เรียกค่าไถ่</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="7">กฎการอุ้ม หรือ เรียกค่าไถ่</td><td>1</td><td>การอุ้มห้ามทำให้เหยื่อสลบ ต้องใช้เชือกมัดเท่านั้น</td></tr>
+            <tr><td>2</td><td>หากเชือกหลุด เหยื่อสามารถดิ้นหลุดได้ทันที</td></tr>
+            <tr><td>3</td><td>เรียกค่าไถ่ห้ามเปลี่ยนชุด 1 วัน (OC) และต้องอยู่ในเมือง 2 ชม.</td></tr>
+            <tr><td>4</td><td>เรียกค่าไถ่ได้ไม่เกิน 500 ดอลลาร์ต่อครั้ง</td></tr>
+            <tr><td>5</td><td>กรณีฉุกเฉินเปิด Ticket นัดต่อเนื้อเรื่อง และแจ้ง Lawman</td></tr>
+            <tr><td>6</td><td>หากร่วมประลองกับ Lawman ต้องยิงขึ้นฟ้า 3 นัดก่อนปะทะ</td></tr>
+            <tr><td>7</td><td>ห้ามอุ้มแล้วสลบ หรือบังคับให้เหยื่อถอนเงิน</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- กฎการใช้เชือก -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>กฎการใช้เชือก</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="6">กฎการใช้เชือก</td><td>1</td><td>ห้ามใช้เชือกเล่นโดยไม่มี Story</td></tr>
+            <tr><td>2</td><td>มัดได้เมื่อฝ่ายตรงข้ามยอมแพ้หรือยินยอม</td></tr>
+            <tr><td>3</td><td>ผู้ถูกมัดห้ามฆ่าตัวตาย</td></tr>
+            <tr><td>4</td><td>ห้ามใช้เชือกต่อสู้กับอาวุธอื่น</td></tr>
+            <tr><td>5</td><td>ห้ามใช้เชือกวิ่งมัดผู้อื่นโดยไม่มีเหตุ</td></tr>
+            <tr><td>6</td><td>หากไม่มีผู้เฝ้า ผู้ถูกมัดดิ้นหลุดได้ทันที</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- การปล้น Bank (ธนาคาร) - ฝ่ายผู้ปล้น -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>การปล้น Bank (ฝ่ายผู้ปล้น)</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="6">การปล้น Bank<br/>(ฝ่ายผู้ปล้น)</td><td>1</td><td>ผู้ปล้นได้ไม่เกิน 5 คน และต้องแสดงจำนวนชัดเจน</td></tr>
+            <tr><td>2</td><td>ผู้ปล้นต้องมี 1 คนเจรจากับ Lawman ก่อนทุกครั้ง</td></tr>
+            <tr><td>3</td><td>หากโจรยิงก่อน Lawman บุกได้ทันที</td></tr>
+            <tr><td>4</td><td>ผู้ปล้นต้องทิ้งตัวประกันไว้หน้าธนาคารก่อนหลบหนี</td></tr>
+            <tr><td>5</td><td>หลังปล้นเสร็จ รอ 10 วินาทีก่อน Lawman เริ่มยิง</td></tr>
+            <tr><td>6</td><td>ข้ามเจรจา ต้องยิงขึ้นฟ้า 1 นัดเพื่อแสดงเจตนา</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- การปล้น Bank (ฝ่ายตัวประกัน) -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>การปล้น Bank (ฝ่ายตัวประกัน)</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="2">การปล้น Bank<br/>(ฝ่ายตัวประกัน)</td><td>1</td><td>ตัวประกันต้องไม่ขัดขืนระหว่างเจรจา</td></tr>
+            <tr><td>2</td><td>ผู้ปล้นต้องทิ้งตัวประกันไว้หน้าธนาคารก่อนหลบหนี</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- การปล้น Bank (ฝ่าย Lawman) -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>การปล้น Bank (ฝ่าย Lawman)</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="8">การปล้น Bank<br/>(ฝ่าย Lawman)</td><td>1</td><td>Lawman ระงับเหตุได้ไม่เกิน 5 นาย</td></tr>
+            <tr><td>2</td><td>Lawman ต้องมี 1 คนเจรจากับโจร</td></tr>
+            <tr><td>3</td><td>Lawman ที่ไม่เกี่ยวข้องประสานหมอรับตัวประกัน</td></tr>
+            <tr><td>4</td><td>หลังปล้นเสร็จ รอ 10 วินาทีก่อนยิง</td></tr>
+            <tr><td>5</td><td>หากโจรยิงก่อน cooldown Lawman ยิงสวนได้</td></tr>
+            <tr><td>6</td><td>หากชาวเมืองก่อกวน Lawman สามารถจับขังได้</td></tr>
+            <tr><td>7</td><td>Lawman มีสิทธิ์ไม่ทำตามคำร้องขอที่ไม่สมเหตุผล</td></tr>
+            <tr><td>8</td><td>โจรห้ามนำของใส่ม้าในขณะ Story กำลังดำเนิน</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- กฎการปล้นร้านค้า -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>กฎการปล้นร้านค้า</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="5">กฎการปล้นร้านค้า</td><td>1</td><td>ผู้ปล้นร้านค้าได้ไม่เกิน 5 คน/ครั้ง</td></tr>
+            <tr><td>2</td><td>Lawman เจรจา หากโจรยิงก่อนยิงสวนได้ทันที</td></tr>
+            <tr><td>3</td><td>Lawman ระงับเหตุได้ 5 นาย</td></tr>
+            <tr><td>4</td><td>หากโจรถูกจับต้องยึดอาวุธถาวร</td></tr>
+            <tr><td>5</td><td>ห้ามเปลี่ยนชุดหรือทรงผม 2 ชม. หลังปล้น (OC)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- กฎการปล้นค่ายทหาร -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>กฎการปล้นค่ายทหาร</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="5">กฎการปล้นค่ายทหาร</td><td>1</td><td>ผู้ปล้นค่ายได้ไม่เกิน 5 นาย/ครั้ง</td></tr>
+            <tr><td>2</td><td>Lawman เจรจา หากโจรยิงก่อนยิงสวนได้ทันที</td></tr>
+            <tr><td>3</td><td>Lawman ระงับเหตุได้ 5 นาย</td></tr>
+            <tr><td>4</td><td>หากโจรถูกจับต้องยึดอาวุธถาวร</td></tr>
+            <tr><td>5</td><td>ห้ามเปลี่ยนชุดหรือทรงผม 2 ชม. หลังปล้น (OC)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- กฎการรักษา -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>กฎการรักษา</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="6">กฎการรักษา</td><td>1</td><td>ฝ่ายหมอ: ห้ามรักษาในที่โล่ง ต้องเข้าอาคาร</td></tr>
+            <tr><td>2</td><td>หากผู้บาดเจ็บมาซ้ำ 2 รอบใน 30 นาที ต้องพักอย่างน้อย 10 นาที</td></tr>
+            <tr><td>3</td><td>ฝ่ายผู้บาดเจ็บ: ห้ามเล่นต่อทันที ต้องรอ 20 นาที</td></tr>
+            <tr><td>4</td><td>ห้ามทำตัวปกติดีเมื่อจำเป็นต้องต่อ Story</td></tr>
+            <tr><td>5</td><td>ผู้บาดเจ็บซ้ำ 2 รอบใน 30 นาที ต้องพัก 10 นาที</td></tr>
+            <tr><td>6</td><td>ผู้สลบห้ามพูดหรือส่งเสียงจนกว่าจะรักษา (ฝ่าฝืนผิด MG)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- กฎ TAKEDOWN -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>กฎ TAKEDOWN</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="3">กฎ TAKEDOWN</td><td>1</td><td>ห้ามวิ่งชนแล้วยิงซ้ำหรือให้เพื่อนยิงซ้ำ</td></tr>
+            <tr><td>2</td><td>ห้ามทำ Takedown กับผู้เล่น ยกเว้น NPC</td></tr>
+            <tr><td>3</td><td>หากพลาดล้มผู้อื่น ให้รีบออกห่างและห้ามยิงจนกว่าเขาจะตั้งตัว</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- การล้มละลาย -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>การล้มละลาย</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>การล้มละลาย</td><td>–</td><td>หากเงินติดลบเกิน 3,000 USD นานกว่า 3 วัน ถือว่าล้มละลายและจบ Role ทันที</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- กฎการปะทะ -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>กฎการปะทะ</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="2">กฎการปะทะ</td><td>1</td><td>ต้องแจ้งก่อนว่าจะปะทะ ห้ามซุ่มยิงโดยไม่แจ้ง</td></tr>
+            <tr><td>2</td><td>ห้ามยิงจากข้างหลัง ต้องยิงขึ้นฟ้า 3 นัดหรือยิงพลาดเตือน</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- กฎการใช้กระเป๋า -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>กฎการใช้กระเป๋า</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="3">กฎการใช้กระเป๋า</td><td>1</td><td>ห้ามใส่กระเป๋าในเมืองขณะทำ Story</td></tr>
+            <tr><td>2</td><td>ห้ามเก็บกระเป๋าตกพื้น (ไม่ใช่ของตน)</td></tr>
+            <tr><td>3</td><td>ถ้าจะปล้นของในกระเป๋า ให้วางบนพื้นก่อนตามกฎปล้น</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- การแจ้งข้อพิพาท -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>การแจ้งข้อพิพาท</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="3">การแจ้งข้อพิพาท</td><td>1</td><td>เปิด Ticket ผ่าน “แบบฟอร์มแจ้งข้อพิพาท” เพื่อยื่นเรื่อง</td></tr>
+            <tr><td>2</td><td>ฝ่ายผู้ฟ้องต้องแนบหลักฐานครบถ้วนตามแบบฟอร์ม</td></tr>
+            <tr><td>3</td><td>ฝ่ายผู้ถูกฟ้องต้องตอบภายใน 24 ชม. มิฉะนั้นถือว่าผู้ฟ้องชนะ</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- การยื่นขออุทธรณ์ -->
+      <div class="table-responsive">
+        <table class="rules-table">
+          <caption>การยื่นขออุทธรณ์</caption>
+          <thead>
+            <tr><th>หมวด</th><th>ลำดับ</th><th>รายละเอียด</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="5">การยื่นขออุทธรณ์</td><td>1</td><td>ต้องเขียนคำร้องขออุทธรณ์ถึงทีมงานในกรณีข้อพิพาท</td></tr>
+            <tr><td>2</td><td>ต้องแนบหลักฐานเพิ่มเติมในการอุทธรณ์</td></tr>
+            <tr><td>3</td><td>ยื่นภายใน 24 ชม. หลังผลคำตัดสิน</td></tr>
+            <tr><td>4</td><td>จ่ายค่าธรรมเนียม 100 USD (IC) หรือ 500 บาท (OOC)</td></tr>
+            <tr><td>5</td><td>คำตัดสินอุทธรณ์ถือเป็นที่สิ้นสุด</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <!-- ... (เหมือนเดิม) ... -->
+  </footer>
+
+  <!-- SCRIPTS -->
+<script src="js/main.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/scroll.js"></script>
+  <!-- MODAL JOIN DISCORD -->
+<div class="modal hide" id="modal">
+  <div class="modal__overlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" id="closeModal">&times;</button>
+    <img src="images/discord_logo.png" alt="Discord">
+    <p>เข้าร่วม Discord เพื่อรับข่าวสารและพูดคุยกับชาวเมือง</p>
+    <a href="https://discord.gg/baRzQdxu2r" class="btn--accent" target="_blank" rel="noopener noreferrer">
+      Join Discord
+    </a>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Red Dawn</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER (fixed) -->
+  <header class="header">
+    <div class="header__inner container">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo.png" alt="Red Dawn Logo">
+      </a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link"><span data-lang="th">หน้าหลัก</span><span data-lang="en">Home</span></a></li>
+          <li><a href="history.html" class="nav__link"><span data-lang="th">ประวัติเมือง</span><span data-lang="en">History</span></a></li>
+          <li><a href="rp-rules.html" class="nav__link"><span data-lang="th">กฎ Roleplay</span><span data-lang="en">RP Rules</span></a></li>
+          <li><a href="city-rules.html" class="nav__link"><span data-lang="th">กฎเมือง</span><span data-lang="en">City Rules</span></a></li>
+          <li><a href="play.html" class="nav__link"><span data-lang="th">เล่นกับเรา</span><span data-lang="en">Play with Us</span></a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button class="btn--icon lang-btn" data-lang="th"><img src="images/thailand-flag.png" alt="TH"></button>
+        <button class="btn--icon lang-btn" data-lang="en"><img src="images/us-flag.png" alt="EN"></button>
+        <button class="btn--primary" id="openModal">
+          <img src="images/discord_logo.png" alt="Discord"> Join Discord
+        </button>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    <section class="hero">
+      <div class="hero__content container">
+        <!-- หัวเรื่อง -->
+        <h1 class="hero__title">
+          <span data-lang="th">ยินดีต้อนรับสู่ Red Dawn</span>
+          <span data-lang="en">Welcome to Red Dawn</span>
+        </h1>
+        <!-- โลโก้กลาง -->
+        <img src="images/logo.png" alt="Red Dawn Logo" class="hero__logo">
+
+        <!-- คำอธิบาย -->
+        <p class="hero__desc">
+          <span data-lang="th">สำรวจโลก Western ยุค 1880 ที่เต็มไปด้วยเรื่องราว ผจญภัย และชุมชนที่เข้มแข็ง พร้อมสร้างตำนานของคุณ!</span>
+          <span data-lang="en">Discover the 1880s Western realm filled with stories, adventure, and a vibrant community—forge your legend!</span>
+        </p>
+
+        <!-- ปุ่มสวมบทบาทกับเรา -->
+        <div class="hero__buttons">
+          <a href="play.html" class="btn--accent">
+            <span data-lang="th">สวมบทบาทกับเรา</span>
+            <span data-lang="en">Play Now</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Carousel -->
+      <div id="gallery" class="carousel container" data-carousel>
+        <button class="carousel__btn carousel__btn--prev" data-carousel-button="prev">❮</button>
+        <ul data-slides>
+          <li class="carousel__slide" data-active><img src="images/img1.jpg" alt=""></li>
+          <li class="carousel__slide"><img src="images/img2.jpg" alt=""></li>
+          <li class="carousel__slide"><img src="images/img3.png" alt=""></li>
+        </ul>
+        <button class="carousel__btn carousel__btn--next" data-carousel-button="next">❯</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container"><p>&copy; 2025 Red Dawn. All rights reserved.</p></div>
+  </footer>
+
+<!-- SCRIPTS -->
+<script src="js/main.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/scroll.js"></script>
+
+<!-- MODAL JOIN DISCORD -->
+<div class="modal hide" id="modal">
+  <div class="modal__overlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" id="closeModal">&times;</button>
+    <img src="images/discord_logo.png" alt="Discord">
+    <p>เข้าร่วม Discord เพื่อรับข่าวสารและพูดคุยกับชาวเมือง</p>
+    <a href="https://discord.gg/baRzQdxu2r" class="btn--accent" target="_blank" rel="noopener noreferrer">
+      Join Discord
+    </a>
+  </div>
+</div>
+</body>
+</html>
