@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Red Dawn</title>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>เล่นกับเรา - Red Dawn</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:wght@300;400;500;700&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- HEADER (fixed) -->
+  <!-- HEADER -->
   <header class="header">
     <div class="header__inner container">
-      <a href="index.html" class="header__logo">
-        <img src="images/logo.png" alt="Red Dawn Logo">
-      </a>
+      <a href="index.html" class="header__logo"><img src="images/logo.png" alt="Red Dawn Logo"></a>
       <nav class="nav">
         <ul class="nav__list">
           <li><a href="index.html" class="nav__link"><span data-lang="th">หน้าหลัก</span><span data-lang="en">Home</span></a></li>
@@ -27,99 +21,55 @@
           <li><a href="play.html" class="nav__link"><span data-lang="th">เล่นกับเรา</span><span data-lang="en">Play with Us</span></a></li>
         </ul>
       </nav>
-         <!-- ปุ่ม Hamburger (nav-toggle) -->
-    <button class="nav-toggle" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    
       <div class="header__actions">
         <button class="btn--icon lang-btn" data-lang="th"><img src="images/thailand-flag.png" alt="TH"></button>
         <button class="btn--icon lang-btn" data-lang="en"><img src="images/us-flag.png" alt="EN"></button>
-        <button class="btn--primary" id="openModal">
-          <img src="images/discord_logo.png" alt="Discord"> Join Discord
-        </button>
+        <button class="btn--primary" id="openModal"><img src="images/discord_logo.png" alt="Discord"> Join Discord</button>
         <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
       </div>
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main class="main">
-<section class="section">
-  <div class="container">
-    <h2 class="text-center" style="text-align: center;">
-      <span data-lang="th">กฎ Roleplay</span>
-      <span data-lang="en">Roleplay Rules</span>
-    </h2>
-    <div class="rules-table-wrapper">
-      <table class="rules-table" style="table-layout: fixed; width: 100%; text-align: center;">
-        <thead>
-          <tr>
-            <th style="width: 6%; text-align: center;"><span data-lang="th">ลำดับ</span><span data-lang="en">No.</span></th>
-            <th style="width: 15%; text-align: center;"><span data-lang="th">ชื่อกฎ</span><span data-lang="en">Rule</span></th>
-            <th style="width: 30%; text-align: center;"><span data-lang="th">คำอธิบาย</span><span data-lang="en">Explanation</span></th>
-            <th style="width: 30%; text-align: center;"><span data-lang="th">ตัวอย่าง</span><span data-lang="en">Example</span></th>
-            <th style="width: 20%; text-align: center;"><span data-lang="th">บทลงโทษ</span><span data-lang="en">Penalty</span></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td class="text-center">1</td><td>Common Sense</td><td><span data-lang="th">กฎพื้นฐานที่ผู้เล่นควรมี เช่น มารยาท ความเคารพ และสามัญสำนึก</span><span data-lang="en">Basic etiquette, mutual respect, and common sense rules</span></td><td><span data-lang="th">ห้ามด่าทอ เหยียดเพศ หรือใช้ความรุนแรงโดยไม่สมเหตุสมผล</span><span data-lang="en">No toxic language, hate speech, or unjustified violence</span></td><td><span data-lang="th">เตือน / แบนชั่วคราว / แบนถาวร</span><span data-lang="en">Warning / Temporary ban / Permanent ban</span></td></tr>
+    <section class="play section">
+      <div class="container">
+        <h2 class="text-center"><span data-lang="th">ร่วมเล่นกับเรา</span><span data-lang="en">Play with Us</span></h2>
+        <p class="text-center">
+          <span data-lang="th">Red Dawn เปิดรับผู้เล่นทุกท่านมาร่วมผจญภัยและสร้างเรื่องราวในโลก Western ยุค 1880!</span>
+          <span data-lang="en">Red Dawn welcomes you to join adventures and create stories in the 1880s Western world!</span>
+        </p>
 
-          <tr><td class="text-center">2</td><td>Fail-Roleplay (F-RP)</td><td><span data-lang="th">การกระทำที่ไม่สมจริงหรือขัดกับความเป็นจริง</span><span data-lang="en">Unrealistic or illogical actions during RP</span></td><td><span data-lang="th">เช่น โดนยิงแล้วยังเดินได้ปกติ</span><span data-lang="en">Example: Walking normally after being shot</span></td><td><span data-lang="th">เตือน / ปรับบท / แบน</span><span data-lang="en">Warning / Adjust scene / Ban</span></td></tr>
-
-          <tr><td class="text-center">3</td><td>Breaking Roleplay</td><td><span data-lang="th">การทำลายบรรยากาศของบทบาท</span><span data-lang="en">Ruining the RP atmosphere</span></td><td><span data-lang="th">พูดว่า "แลค เดี๋ยวรี" ขณะ RP</span><span data-lang="en">Saying "lag, brb" during RP</span></td><td><span data-lang="th">เตือน / บังคับให้อยู่ในบทบาท / แบน</span><span data-lang="en">Warning / Forced IC / Ban</span></td></tr>
-
-          <tr><td class="text-center">4</td><td>In Character (IC)</td><td><span data-lang="th">การกระทำหรือพูดที่อยู่ในโลกของตัวละคร</span><span data-lang="en">Actions or speech within character context</span></td><td><span data-lang="th">“สวัสดีครับคุณตำรวจ ผมมารายงานตัวครับ”</span><span data-lang="en">“Hello officer, I’m here to report in.”</span></td><td><span data-lang="th">ไม่มีโทษ</span><span data-lang="en">No penalty</span></td></tr>
-
-          <tr><td class="text-center">5</td><td>Out of Character (OOC)</td><td><span data-lang="th">การพูดเรื่องนอกเกมในฉาก RP</span><span data-lang="en">Speaking real-life topics during RP</span></td><td><span data-lang="th">“บัคอีกละ เกมเจ๊ง”</span><span data-lang="en">“Bug again, game is broken.”</span></td><td><span data-lang="th">เตือน / ใช้ได้เฉพาะ /ooc</span><span data-lang="en">Warning / Use only in /ooc</span></td></tr>
-
-          <tr><td class="text-center">6</td><td>Meta-Gaming (MG)</td><td><span data-lang="th">ใช้ข้อมูลจากนอกเกมมาส่งผลในเกม</span><span data-lang="en">Using OOC knowledge to act in-character</span></td><td><span data-lang="th">ฟัง Discord แล้วบุกทันที</span><span data-lang="en">Raiding after hearing in Discord</span></td><td><span data-lang="th">แบนทันที</span><span data-lang="en">Immediate ban</span></td></tr>
-
-          <tr><td class="text-center">7</td><td>Sexual Harassment (SH)</td><td><span data-lang="th">ล่วงละเมิดทางเพศทุกกรณี</span><span data-lang="en">Any form of sexual harassment</span></td><td><span data-lang="th">พูดลามก / บังคับ RP เพศ</span><span data-lang="en">Sexual comments / Forced sexual RP</span></td><td><span data-lang="th">แบนถาวร</span><span data-lang="en">Permanent ban</span></td></tr>
-
-          <tr><td class="text-center">8</td><td>Power-Gaming (PG)</td><td><span data-lang="th">การกดดันหรือไม่ให้โอกาส RP กลับ</span><span data-lang="en">Forcing actions without chance to respond</span></td><td><span data-lang="th">/me ยิงหัวทันที</span><span data-lang="en">/me shoots you in the head instantly</span></td><td><span data-lang="th">เตือน / แก้บท / แบน</span><span data-lang="en">Warning / Adjust RP / Ban</span></td></tr>
-
-          <tr><td class="text-center">9</td><td>Deathmatch (DM)</td><td><span data-lang="th">ฆ่าโดยไม่มีเหตุผล RP</span><span data-lang="en">Killing without RP justification</span></td><td><span data-lang="th">ฆ่าผู้เล่นใหม่ / ยิงเพราะไม่ชอบ</span><span data-lang="en">Shooting new players / killing without IC reason</span></td><td><span data-lang="th">แบนทันที</span><span data-lang="en">Immediate ban</span></td></tr>
-
-          <tr><td class="text-center">10</td><td>Revenge Killing (RK)</td><td><span data-lang="th">ล้างแค้นหลังเกิดใหม่ทันที</span><span data-lang="en">Revenge immediately after respawn</span></td><td><span data-lang="th">ฆ่าคืนทันทีหลังตาย</span><span data-lang="en">Instant revenge after dying</span></td><td><span data-lang="th">แบน / ลบ RP</span><span data-lang="en">Ban / Delete RP</span></td></tr>
-
-          <tr><td class="text-center">11</td><td>Combat Logout (CL)</td><td><span data-lang="th">ออกเกมหนีขณะ RP สำคัญ</span><span data-lang="en">Logging off to escape consequences</span></td><td><span data-lang="th">ออกเกมตอนถูกจับ</span><span data-lang="en">Log off during arrest</span></td><td><span data-lang="th">แบน</span><span data-lang="en">Ban</span></td></tr>
-
-          <tr><td class="text-center">12</td><td>Spawn Killing (SK)</td><td><span data-lang="th">ฆ่าหลัง spawn หรือในโซนปลอดภัย</span><span data-lang="en">Killing after respawn / in safe zone</span></td><td><span data-lang="th">ยิงหน้าโรงบาล / สถานีตำรวจ</span><span data-lang="en">Shooting near hospital / police station</span></td><td><span data-lang="th">แบนทันที</span><span data-lang="en">Immediate ban</span></td></tr>
-
-          <tr><td class="text-center">13</td><td>Suicide (SC)</td><td><span data-lang="th">ฆ่าตัวตายเพื่อหนีผล RP</span><span data-lang="en">Suicide to avoid consequences</span></td><td><span data-lang="th">โดนจับแล้วกดตาย</span><span data-lang="en">Suicide during arrest</span></td><td><span data-lang="th">เตือน / แบน</span><span data-lang="en">Warning / Ban</span></td></tr>
-
-          <tr><td class="text-center">14</td><td>Value of Life (VOL)</td><td><span data-lang="th">ไม่เห็นคุณค่าชีวิตตัวละคร</span><span data-lang="en">Not valuing character's life</span></td><td><span data-lang="th">โดนจ่อปืนแล้วยังยั่ว</span><span data-lang="en">Taunting while being held at gunpoint</span></td><td><span data-lang="th">เตือน / แก้ RP</span><span data-lang="en">Warning / Fix RP</span></td></tr>
-
-          <tr><td class="text-center">15</td><td>Fair Play (FP)</td><td><span data-lang="th">ไม่ใช้โปรแกรมช่วย / Bug / Exploit</span><span data-lang="en">No cheating, bugs, or exploiting</span></td><td><span data-lang="th">ESP / บัควิ่ง / สคริปต์โกง</span><span data-lang="en">ESP / Speed bug / Hack scripts</span></td><td><span data-lang="th">แบนถาวร</span><span data-lang="en">Permanent ban</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
+        <!-- ปุ่ม Join Discord พร้อมไอคอน -->
+        <div class="text-center" style="margin-top:2rem;">
+          <a href="https://discord.gg/baRzQdxu2r" class="btn--accent" target="_blank" rel="noopener noreferrer">
+            <img src="images/discord_logo.png" alt="Discord" class="btn__icon"> Join Discord
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container"><p>&copy; 2025 Red Dawn. All rights reserved.</p></div>
-  </footer>
+  <footer class="footer"><div class="container"><p>&copy; 2025 Red Dawn. All rights reserved.</p></div></footer>
+
   <!-- SCRIPTS -->
-<script src="js/main.js"></script>
-<script src="js/carousel.js"></script>
-<script src="js/modal.js"></script>
-<script src="js/scroll.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/scroll.js"></script>
+
   <!-- MODAL JOIN DISCORD -->
-<div class="modal hide" id="modal">
-  <div class="modal__overlay"></div>
-  <div class="modal__content">
-    <button class="modal__close" id="closeModal">&times;</button>
-    <img src="images/discord_logo.png" alt="Discord">
-    <p>เข้าร่วม Discord เพื่อรับข่าวสารและพูดคุยกับชาวเมือง</p>
-    <a href="https://discord.gg/baRzQdxu2r" class="btn--accent" target="_blank" rel="noopener noreferrer">
-      Join Discord
-    </a>
+  <div class="modal hide" id="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="closeModal">&times;</button>
+      <img src="images/discord_logo.png" alt="Discord">
+      <p>เข้าร่วม Discord เพื่อรับข่าวสารและพูดคุยกับชาวเมือง</p>
+      <a href="https://discord.gg/baRzQdxu2r" class="btn--accent" target="_blank" rel="noopener noreferrer">
+        Join Discord
+      </a>
+    </div>
   </div>
-</div>
 </body>
 </html>
