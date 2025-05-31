@@ -1,0 +1,486 @@
+:root {
+  --clr-dark: #121212;
+  --clr-deep: #0a0a0a;
+  --clr-red: #ff3333;
+  --clr-red-dark: #660000;
+  --clr-accent: #5865F2;
+  --clr-text: #eee;
+  --font-sans: 'Roboto', sans-serif;
+  --font-deco: 'Pirata One', cursive;
+  --header-height: 64px;
+}
+
+
+.hero__logo {
+  display: block;
+  width: 120px;
+  margin: 1rem auto;
+  height: auto;
+}
+
+/* reset */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{font-size:16px;scroll-behavior:smooth;}
+body {
+  font-family:var(--font-sans);
+  background:var(--clr-deep);
+  color:var(--clr-text);
+  display:flex;flex-direction:column;
+  min-height:100vh;
+  padding-top:var(--header-height);
+}
+
+/* ปรับขนาดโลโก้กลางหน้า */
+.play__logo {
+  display: block;
+  max-width: 120px;
+  margin: 2rem auto 1.5rem;
+}
+
+/* ปรับขนาดไอคอนในปุ่ม */
+.btn__icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* ปรับปุ่มให้จัดวางสวย */
+.btn--accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+
+#openModal img {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.modal__content img {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+/* container */
+.container {
+  width: min(95%,1200px);
+  margin: 0 auto; padding:0 1rem;
+}
+
+/* fixed header */
+.header {
+  position:fixed;top:0;left:0;
+  width:100%;height:var(--header-height);
+  background:var(--clr-dark);
+  border-bottom:2px solid var(--clr-red-dark);
+  z-index:1000;
+}
+.header__inner {
+  display:flex;align-items:center;justify-content:space-between;
+  height:100%;padding:0 1rem;
+}
+.header__logo img {
+  height:50px; /* เพิ่มขนาดโลโก้ให้ใหญ่ขึ้น */
+  filter:brightness(0) invert(1);
+}
+.nav__list {
+  display:flex;gap:2rem;list-style:none;
+}
+.nav__link {
+  color:var(--clr-text);font-size:1rem;
+  padding:0.5rem;transition:color .3s;
+}
+.nav__link:hover {color:var(--clr-red);}
+.header__actions {
+  display:flex;align-items:center;gap:0.75rem;
+}
+.btn--icon {
+  background:none;border:none;padding:0.25rem;
+}
+.btn--icon img {width:28px;} /* flag icon ใหญ่ขึ้น */
+.btn--primary {
+  background:var(--clr-accent);color:#fff;
+  padding:0.5rem 1rem;border:none;border-radius:4px;
+  cursor:pointer;transition:transform .2s;
+}
+.btn--primary:hover {transform:translateY(-2px);}
+.nav-toggle {
+  display:none;flex-direction:column;gap:4px;
+  background:none;border:none;cursor:pointer;
+}
+.nav-toggle span {
+  display:block;width:24px;height:2px;background:var(--clr-text);
+}
+
+/* main content */
+.main {flex:1;overflow:auto;}
+
+/* sections */
+.section {padding:4rem 0;}
+.section .container {padding-top:0;}
+
+/* Hero */
+.hero {text-align:center;padding:4rem 0 2rem;background:var(--clr-dark);}
+.hero__content {max-width:800px;margin:0 auto;}
+.hero__title {
+  font-family:var(--font-deco);font-size:3rem;
+  color:var(--clr-red);margin-bottom:1rem;
+}
+.hero__desc {
+  font-size:1.125rem;color:#ccc;
+  margin-bottom:2rem;line-height:1.6;
+}
+.hero__buttons {display:inline-flex;gap:1rem;}
+.btn--accent {
+  background:var(--clr-red);color:#fff;
+  padding:0.75rem 1.5rem;border:none;border-radius:4px;
+  cursor:pointer;transition:transform .2s;
+}
+.btn--accent:hover {transform:translateY(-2px);}
+.btn--outline {
+  background:transparent;border:2px solid var(--clr-red);
+  color:var(--clr-red);padding:0.75rem 1.5rem;
+  border-radius:4px;cursor:pointer;
+  transition:background .3s,transform .2s;
+}
+.btn--outline:hover {
+  background:rgba(255,51,51,0.1);transform:translateY(-2px);
+}
+
+/* Carousel */
+.carousel img {
+  max-width: 75%;
+  max-height: 70vh; /* ลดความสูงลงจากเต็มจอ */
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px; /* เพิ่มความสวยงามนิดนึง */
+}
+
+
+.carousel {
+  position:relative;max-width:800px;
+  margin:2rem auto;overflow:hidden;
+}
+[data-slides] {
+  display:flex;transition:transform .5s ease;
+}
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+  overflow: hidden;
+}
+
+[data-slides] {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.carousel__slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel__slide img {
+  max-width: 75%;
+  max-height: 50vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+.carousel__btn--prev {
+  left: 1rem;
+}
+.carousel__btn--next {
+  right: 1rem;
+}
+
+/* Modal */
+.modal__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2002; /* อยู่บนสุด */
+}
+
+.modal__content p {
+  font-size: 1rem;
+  color: #eee;
+  line-height: 1.6;
+  margin-bottom: 1.25rem; /* ✅ เว้นระยะจากข้อความถึงปุ่ม */
+  white-space: normal;    /* ✅ ป้องกันไม่ให้ตัดคำผิดจังหวะ */
+  text-align: center;
+}
+
+.modal {
+  position:fixed;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  z-index:2000;
+}
+.modal.hide {display:none;}
+
+.modal__content {
+  position: relative;
+  background: var(--clr-deep);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+  z-index: 2001; /* อยู่บน overlay */
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  pointer-events: none; /* ✅ สำคัญมาก! ให้คลิกทะลุได้ */
+}
+
+
+/* Lists */
+.rules-list {
+  list-style:decimal inside;line-height:1.8;color:#ccc;
+  margin-top:1rem;
+}
+.history article p {
+  margin-bottom:1.5rem;text-align:justify;color:#ccc;
+}
+.play {
+  text-align:center;padding:4rem 0;
+}
+.play .btn--accent {
+  margin-top:1rem; /* ปรับไม่ให้ทับ text */
+}
+
+/* Footer */
+.footer {
+  background:var(--clr-dark);border-top:1px solid var(--clr-red-dark);
+  text-align:center;padding:1.5rem 0;margin-top:auto;
+}
+.footer p {color:#777;font-size:0.875rem;}
+
+/* Ripple */
+.ripple {
+  position:absolute;border-radius:50%;transform:scale(0);
+  background:rgba(255,255,255,0.3);animation:ripple .6s linear;
+}
+@keyframes ripple {to{transform:scale(4);opacity:0;}}
+button,.btn,.nav__link {position:relative;overflow:hidden;}
+
+/* Responsive */
+@media(max-width:1024px){
+  .nav__list{display:none;}
+  .nav-toggle{display:flex;}
+}
+@media(max-width:768px){
+  .hero__title{font-size:2.5rem;}
+  .container{width:95%;}
+}
+
+
+/* … existing CSS … */
+
+/* ตารางกฎ */
+.table-responsive {
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+.rules-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.rules-table th,
+.rules-table td {
+  border: 1px solid var(--clr-red);
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+.rules-table th {
+  background: var(--clr-dark);
+  color: var(--clr-text);
+}
+.rules-table tr:nth-child(even) td {
+  background: rgba(255,255,255,0.05);
+}
+
+/* จัดหัวเรื่องให้อยู่กึ่งกลาง */
+.section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.rules-table caption {
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* ให้ container ทุกตารางเท่ากัน */
+.table-responsive {
+  width: 100%;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+}
+
+/* ตารางทั้งหมดกว้างเต็มพื้นที่ และกรอบชิดกัน */
+.rules-table {
+  width: 100%;
+  border-collapse: collapse;       /* รวมเส้นกรอบ */
+  table-layout: fixed;             /* บังคับความกว้างคอลัมน์เท่ากัน */
+}
+
+/* กำหนดกรอบแดงให้ทุกเซลล์ */
+.rules-table th,
+.rules-table td {
+  border: 1px solid #E63946;
+  padding: 0.75rem;
+  vertical-align: top;
+  word-wrap: break-word;           /* ตัดบรรทัดอัตโนมัติ */
+}
+
+/* กำหนดอัตราส่วนความกว้างคอลัมน์ */
+.rules-table th:nth-child(1),
+.rules-table td:nth-child(1) {
+  width: 25%;
+}
+.rules-table th:nth-child(2),
+.rules-table td:nth-child(2) {
+  width: 10%;
+  text-align: center;
+}
+.rules-table th:nth-child(3),
+.rules-table td:nth-child(3) {
+  width: 65%;
+}
+
+/* จัดให้ caption อยู่ตรงกลาง */
+.rules-table caption {
+  caption-side: top;
+  text-align: center;
+  padding: 0.5rem 0;
+  font-weight: bold;
+  color: #F1FAEE;
+}
+
+.rules-table th,
+.rules-table td {
+  border: 1px solid #E63946;
+  padding: 0.75rem;
+  /* เพิ่มสองบรรทัดนี้ */
+  text-align: center;      /* กึ่งกลางแนวนอน */
+  vertical-align: middle;  /* กึ่งกลางแนวตั้ง */
+  word-wrap: break-word;
+}
+
+.nav__link.active span[data-lang="th"],
+.nav__link.active span[data-lang="en"] {
+  color: #ac8c0c !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ---------- สำหรับกรอบพื้นหลังของบทความประวัติเมือง ---------- */
+.history__box {
+  background: rgba(255, 255, 255, 0.05); /* พื้นหลังกรอบสีอ่อนโปร่งแสง */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* เส้นกรอบสีขาวโปร่ง */
+  border-radius: 8px;          /* มุมโค้งมนเล็กน้อย */
+  padding: 2rem 1.5rem;        /* เว้นขอบด้านในให้พอเหมาะ */
+  margin-bottom: 2rem;         /* เว้นช่องว่างด้านล่าง */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* เงาบางๆ เพื่อให้กรอบลอยขึ้นมาจากพื้นหลัง */
+  line-height: 1.75;           /* เพิ่มการเว้นบรรทัดให้สบายตา */
+}
+
+.history__box p {
+  margin-bottom: 1.25rem;      /* เว้นช่วงระหว่างย่อหน้า */
+  color: #ddd;                 /* สีตัวอักษรภายในกรอบ (อ่อนกว่าเล็กน้อยเพื่อความนุ่มนวล) */
+  text-align: justify;         /* จัดข้อความให้ชิดสองฝั่งเพื่อความสวยงาม */
+}
+
+/* ถ้าต้องการให้หัวเรื่องภายในกรอบอยู่กึ่งกลาง สามารถประกาศเพิ่มได้ */
+.history__box h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--clr-red);
+}
+
+
+<style>
+  .nav__link span {
+    text-decoration: none;
+  }
+
+  .nav__link,
+  .nav__link:visited,
+  .nav__link:hover,
+  .nav__link:focus,
+  .nav__link:active {
+    text-decoration: none !important;
+  }
+
+  .nav__link.active span[data-lang="th"],
+  .nav__link.active span[data-lang="en"] {
+    color: #facc15 !important;
+    font-weight: bold;
+    text-decoration: none !important;
+  }
+
+  /* ========== ส่วนเพิ่มสำหรับเมนูมือถือ (Hamburger) ========== */
+
+/* เมื่อหน้าจอเล็กกว่า 1024px ให้ .nav__list ถูกซ่อนโดยดีฟอลต์อยู่แล้ว (จากโค้ดเดิม)
+   แต่เมื่อ .nav__list ถูก toggle คลาส open แล้ว ให้แสดงเมนูขึ้นมา */
+
+@media(max-width: 1024px) {
+  .nav__list.open {
+    display: flex;               /* แสดงเมนู (เดิมคือ display: none) */
+    flex-direction: column;      /* จัดรายการเป็นแนวตั้ง */
+    position: absolute;          /* ให้อยู่เหนือเนื้อหาอื่นๆ */
+    top: var(--header-height);   /* เริ่มตั้งที่ด้านล่างของ header */
+    right: 0;                    /* ชิดขวาเต็มหน้าจอ */
+    background: var(--clr-dark); /* พื้นหลังสีเดียวกับ header */
+    width: 100%;                 /* เต็มความกว้างจอ */
+    padding: 1rem 0;             /* เว้นช่องว่างด้านบน-ล่าง */
+    z-index: 999;                /* ให้อยู่เหนือเนื้อหาอื่น */
+  }
+
+  /* ปรับแต่ละลิงก์ในเมนูให้กดง่ายขึ้น (padding + เส้นแบ่ง) */
+  .nav__list.open .nav__link {
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+  
+  
+</style>
