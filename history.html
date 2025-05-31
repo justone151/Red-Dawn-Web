@@ -1,112 +1,265 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ประวัติเมือง Red Dawn</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- CSS สั้นๆ สำหรับซ่อน/แสดงข้อความตาม data-lang และจัดข้อความในประวัติให้อยู่ตรงกลาง -->
+  <style>
+    /* ซ่อนเฉพาะ <span> ที่มี data-lang */
+    span[data-lang] {
+      display: none;
+    }
+    html.lang-th span[data-lang="th"] {
+      display: inline;
+    }
+    html.lang-en span[data-lang="en"] {
+      display: inline;
+    }
+
+    /* ---------- สำหรับกรอบพื้นหลังของบทความประวัติเมือง ---------- */
+    .history__box {
+      background: rgba(255, 255, 255, 0.05); 
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;          
+      padding: 2rem 1.5rem;        
+      margin-bottom: 2rem;         
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      line-height: 1.75;           
+    }
+
+    .history__box p {
+      margin-bottom: 1.25rem;      
+      color: #ddd;                 
+      text-align: center;          /* จัดข้อความให้อยู่ตรงกลาง */
+    }
+
+    /* จัดหัวข้อภายในกรอบให้กึ่งกลาง */
+    .history__box h3 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: var(--clr-red);
+    }
+  </style>
 </head>
 <body>
   <!-- HEADER -->
   <header class="header">
     <div class="header__inner container">
-      <a href="index.html" class="header__logo"><img src="images/logo.png" alt="Red Dawn Logo"></a>
+      <a href="index.html" class="header__logo">
+        <img src="images/logo.png" alt="Red Dawn Logo" />
+      </a>
       <nav class="nav">
         <ul class="nav__list">
-          <li><a href="index.html" class="nav__link"><span data-lang="th">หน้าหลัก</span><span data-lang="en">Home</span></a></li>
-          <li><a href="history.html" class="nav__link"><span data-lang="th">ประวัติเมือง</span><span data-lang="en">History</span></a></li>
-          <li><a href="rp-rules.html" class="nav__link"><span data-lang="th">กฎ Roleplay</span><span data-lang="en">RP Rules</span></a></li>
-          <li><a href="city-rules.html" class="nav__link"><span data-lang="th">กฎเมือง</span><span data-lang="en">City Rules</span></a></li>
-          <li><a href="play.html" class="nav__link"><span data-lang="th">เล่นกับเรา</span><span data-lang="en">Play with Us</span></a></li>
+          <li>
+            <a href="index.html" class="nav__link">
+              <span data-lang="th">หน้าหลัก</span>
+              <span data-lang="en">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="history.html" class="nav__link active">
+              <span data-lang="th">ประวัติเมือง</span>
+              <span data-lang="en">History</span>
+            </a>
+          </li>
+          <li>
+            <a href="rp-rules.html" class="nav__link">
+              <span data-lang="th">กฎ Roleplay</span>
+              <span data-lang="en">RP Rules</span>
+            </a>
+          </li>
+          <li>
+            <a href="city-rules.html" class="nav__link">
+              <span data-lang="th">กฎเมือง</span>
+              <span data-lang="en">City Rules</span>
+            </a>
+          </li>
+          <li>
+            <a href="play.html" class="nav__link">
+              <span data-lang="th">เล่นกับเรา</span>
+              <span data-lang="en">Play with Us</span>
+            </a>
+          </li>
         </ul>
       </nav>
+      
+   <!-- ปุ่ม Hamburger (nav-toggle) -->
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
       <div class="header__actions">
-        <button class="btn--icon lang-btn" data-lang="th"><img src="images/thailand-flag.png" alt="TH"></button>
-        <button class="btn--icon lang-btn" data-lang="en"><img src="images/us-flag.png" alt="EN"></button>
-        <button class="btn--primary" id="openModal"><img src="images/discord_logo.png" alt="Discord"> Join Discord</button>
-        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <!-- ปุ่มเปลี่ยนภาษา (ธงไทย / ธงอังกฤษ) -->
+        <button class="btn--icon lang-btn" data-lang="th">
+          <img src="images/thailand-flag.png" alt="TH" />
+        </button>
+        <button class="btn--icon lang-btn" data-lang="en">
+          <img src="images/us-flag.png" alt="EN" />
+        </button>
+
+        <!-- ปุ่ม Join Discord -->
+        <button class="btn--primary" id="openModal">
+          <img src="images/discord_logo.png" alt="Discord" /> Join Discord
+        </button>
+
+        <!-- ปุ่มเมนู (สำหรับมือถือ) -->
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
-<main class="main">
-  <section class="section">
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center">
+          <span data-lang="th" class="active">ประวัติเมือง Red Dawn</span>
+          <span data-lang="en">History of Red Dawn</span>
+        </h2>
+
+        <!-- กรอบพื้นหลังสำหรับเนื้อหา -->
+        <div class="history__box">
+          <article>
+            <!-- Thai Content -->
+            <div data-lang="th" class="active">
+              <p>
+                กลางหุบเขาทางตะวันตกเฉียงเหนือของทวีปที่ยังไม่ได้ถูกพัฒนา Red Dawn ถือกำเนิดขึ้นจากกลุ่มนักเดินทางกลุ่มหนึ่งที่หลงทางและตั้งค่ายพักชั่วคราวริมแม่น้ำ Silverbend จุดเริ่มต้นของเมืองเกิดจากการค้นพบสายแร่เงินที่ด้านเหนือของภูเขา Bitter Ridge ซึ่งเป็นที่มาของการตั้งรกรากแบบถาวร
+              </p>
+              <p>
+                บุคคลสำคัญในช่วงแรกคือ Clint Barlow อดีตทหารผ่านศึกจากสงครามกลางเมือง เขารวมกลุ่มผู้คนที่มุ่งแสวงหาโอกาสใหม่และนำพวกเขาสร้างชุมชนเล็ก ๆ ที่ภายหลังกลายเป็นศูนย์กลางของการค้าขายและกิจกรรมเหมืองแร่
+              </p>
+              <p>
+                ภายในปีเดียว เมืองเติบโตอย่างรวดเร็ว มีการตั้งร้านเหล้า (Red Dawn Saloon) โรงเลื่อย โรงต้มเหล้าเถื่อน และจุดพักม้า ความมั่งคั่งดึงดูดทั้งพ่อค้า นายทุน และอาชญากร
+              </p>
+              <p>
+                Red Dawn กลายเป็นจุดตัดของอิสรภาพ ความโลภ และกฎหมายที่ไม่ทันสมัย เมืองจึงต้องพึ่งพากลุ่มนักล่าค่าหัวเอกชน เช่น Madeline Cain และสองพี่น้อง Claymore ซึ่งได้รับฉายาว่า "มือปืนฝั่งตะวันตก"
+              </p>
+              <p>
+                ในปีหนึ่งเกิดเหตุขัดแย้งกับชนพื้นเมืองเผ่า Zothoh พวกเขาอ้างว่าภูเขา Bitter Ridge เป็นสุสานศักดิ์สิทธิ์ การขุดเหมืองล่วงล้ำพื้นที่ต้องห้าม ทำให้เกิดการปะทะกัน รัฐบาลกลางจึงส่งทหารและตั้งสำนักงานศาลแห่งแรกในเมือง
+              </p>
+              <p>
+                เมืองพัฒนาอย่างต่อเนื่อง มีโทรเลข รถไฟ และตลาดค้าสัตว์ คุณครู Lydia Bell ก่อตั้งโรงเรียนประถมแห่งแรก
+              </p>
+              <p>
+                หลังเกิดดินถล่มในเหมืองและเศรษฐกิจตกต่ำในปีหนึ่ง ชาวเมืองได้รวมตัวกันตั้ง "สมาคมชาวเมือง" เพื่อฟื้นฟูเศรษฐกิจและช่วยเหลือผู้ได้รับผลกระทบ
+              </p>
+              <p>
+                ปลายทศวรรษ นักลงทุนจากฝั่งตะวันออก เช่น Saint Denis และ Blackwater เริ่มหลั่งไหลเข้ามา Red Dawn ได้รับการวางผังเมืองใหม่และจดทะเบียนเป็นเขตปกครองตนเอง
+              </p>
+              <p>
+                Eleanor Barlow ลูกสาวของ Clint ได้รับเลือกเป็นผู้ว่าคนแรก เธอส่งเสริมการเจรจากับเผ่า Zothoh และการค้ากับเมืองรอบข้าง
+              </p>
+              <p>
+                แม้ยังมีอาชญากรรมในเขตนอกเมือง แต่ Red Dawn กลายเป็นสัญลักษณ์แห่งความกล้าหาญ โอกาส และการอยู่รอดในดินแดนตะวันตก
+              </p>
+            </div>
+
+            <!-- English Content -->
+            <div data-lang="en">
+              <p>
+                Nestled within the remote western highlands, Red Dawn began when a group of lost travelers set up camp along the Silverbend River. The discovery of silver in the Bitter Ridge mountains laid the foundation for permanent settlement.
+              </p>
+              <p>
+                Clint Barlow, a Civil War veteran, led a group of fortune seekers to build a small community that would grow into a mining and trade hub.
+              </p>
+              <p>
+                Within a year, saloons, sawmills, and horse stations had sprung up. The town's wealth attracted merchants, investors, and outlaws alike.
+              </p>
+              <p>
+                With outdated laws and growing violence, bounty hunters like Madeline Cain and the Claymore brothers were called to keep order in Red Dawn.
+              </p>
+              <p>
+                Conflicts arose with the native Zothoh tribe, who claimed Bitter Ridge was sacred land. After bloody clashes, the government intervened and built the town’s first courthouse.
+              </p>
+              <p>
+                The town evolved with telegraph lines, private rail, and a livestock market. Lydia Bell opened the first schoolhouse, fostering education in the town.
+              </p>
+              <p>
+                After a mining collapse triggered economic hardship, townsfolk formed the Citizens’ Society to rebuild and support affected families.
+              </p>
+              <p>
+                By the end of the decade, investors from Saint Denis and Blackwater brought new capital. Red Dawn was officially registered as an autonomous district.
+              </p>
+              <p>
+                Eleanor Barlow, Clint’s daughter, was elected governor. She pursued peace with the Zothoh and encouraged trade with neighboring towns.
+              </p>
+              <p>
+                Though outlaws still roamed the outer reaches, Red Dawn stood tall as a symbol of bravery, opportunity, and survival in the untamed West.
+              </p>
+            </div>
+          </article>
+        </div>
+        <!-- /.history__box -->
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
     <div class="container">
-      <h2 class="text-center">
-        <span data-lang="th" class="active">ประวัติเมือง Red Dawn</span>
-        <span data-lang="en">History of Red Dawn</span>
-      </h2>
-      <article>
-        <!-- TH ภาษาไทย -->
-        <div data-lang="th" class="active">
-          <p>กลางหุบเขาทางตะวันตกเฉียงเหนือของทวีปที่ยังไม่ได้ถูกพัฒนา Red Dawn ถือกำเนิดขึ้นจากกลุ่มนักเดินทางกลุ่มหนึ่งที่หลงทางและตั้งค่ายพักชั่วคราวริมแม่น้ำ Silverbend จุดเริ่มต้นของเมืองเกิดจากการค้นพบสายแร่เงินที่ด้านเหนือของภูเขา Bitter Ridge ซึ่งเป็นที่มาของการตั้งรกรากแบบถาวร</p>
-
-          <p>บุคคลสำคัญในช่วงแรกคือ Clint Barlow อดีตทหารผ่านศึกจากสงครามกลางเมือง เขารวมกลุ่มผู้คนที่มุ่งแสวงหาโอกาสใหม่และนำพวกเขาสร้างชุมชนเล็ก ๆ ที่ภายหลังกลายเป็นศูนย์กลางของการค้าขายและกิจกรรมเหมืองแร่</p>
-
-          <p>ภายในปีเดียว เมืองเติบโตอย่างรวดเร็ว มีการตั้งร้านเหล้า (Red Dawn Saloon) โรงเลื่อย โรงต้มเหล้าเถื่อน และจุดพักม้า ความมั่งคั่งดึงดูดทั้งพ่อค้า นายทุน และอาชญากร</p>
-
-          <p>Red Dawn กลายเป็นจุดตัดของอิสรภาพ ความโลภ และกฎหมายที่ไม่ทันสมัย เมืองจึงต้องพึ่งพากลุ่มนักล่าค่าหัวเอกชน เช่น Madeline Cain และสองพี่น้อง Claymore ซึ่งได้รับฉายาว่า "มือปืนฝั่งตะวันตก"</p>
-
-          <p>ในปีหนึ่งเกิดเหตุขัดแย้งกับชนพื้นเมืองเผ่า Zothoh พวกเขาอ้างว่าภูเขา Bitter Ridge เป็นสุสานศักดิ์สิทธิ์ การขุดเหมืองล่วงล้ำพื้นที่ต้องห้าม ทำให้เกิดการปะทะกัน รัฐบาลกลางจึงส่งทหารและตั้งสำนักงานศาลแห่งแรกในเมือง</p>
-
-          <p>เมืองพัฒนาอย่างต่อเนื่อง มีโทรเลข รถไฟ และตลาดค้าสัตว์ คุณครู Lydia Bell ก่อตั้งโรงเรียนประถมแห่งแรก</p>
-
-          <p>หลังเกิดดินถล่มในเหมืองและเศรษฐกิจตกต่ำในปีหนึ่ง ชาวเมืองได้รวมตัวกันตั้ง "สมาคมชาวเมือง" เพื่อฟื้นฟูเศรษฐกิจและช่วยเหลือผู้ได้รับผลกระทบ</p>
-
-          <p>ปลายทศวรรษ นักลงทุนจากฝั่งตะวันออก เช่น Saint Denis และ Blackwater เริ่มหลั่งไหลเข้ามา Red Dawn ได้รับการวางผังเมืองใหม่และจดทะเบียนเป็นเขตปกครองตนเอง</p>
-
-          <p>Eleanor Barlow ลูกสาวของ Clint ได้รับเลือกเป็นผู้ว่าคนแรก เธอส่งเสริมการเจรจากับเผ่า Zothoh และการค้ากับเมืองรอบข้าง</p>
-
-          <p>แม้ยังมีอาชญากรรมในเขตนอกเมือง แต่ Red Dawn กลายเป็นสัญลักษณ์แห่งความกล้าหาญ โอกาส และการอยู่รอดในดินแดนตะวันตก</p>
-        </div>
-
-        <!-- EN ภาษาอังกฤษ -->
-        <div data-lang="en">
-          <p>Nestled within the remote western highlands, Red Dawn began when a group of lost travelers set up camp along the Silverbend River. The discovery of silver in the Bitter Ridge mountains laid the foundation for permanent settlement.</p>
-
-          <p>Clint Barlow, a Civil War veteran, led a group of fortune seekers to build a small community that would grow into a mining and trade hub.</p>
-
-          <p>Within a year, saloons, sawmills, and horse stations had sprung up. The town's wealth attracted merchants, investors, and outlaws alike.</p>
-
-          <p>With outdated laws and growing violence, bounty hunters like Madeline Cain and the Claymore brothers were called to keep order in Red Dawn.</p>
-
-          <p>Conflicts arose with the native Zothoh tribe, who claimed Bitter Ridge was sacred land. After bloody clashes, the government intervened and built the town’s first courthouse.</p>
-
-          <p>The town evolved with telegraph lines, private rail, and a livestock market. Lydia Bell opened the first schoolhouse, fostering education in the town.</p>
-
-          <p>After a mining collapse triggered economic hardship, townsfolk formed the Citizens’ Society to rebuild and support affected families.</p>
-
-          <p>By the end of the decade, investors from Saint Denis and Blackwater brought new capital. Red Dawn was officially registered as an autonomous district.</p>
-
-          <p>Eleanor Barlow, Clint’s daughter, was elected governor. She pursued peace with the Zothoh and encouraged trade with neighboring towns.</p>
-
-          <p>Though outlaws still roamed the outer reaches, Red Dawn stood tall as a symbol of bravery, opportunity, and survival in the untamed West.</p>
-        </div>
-      </article>
+      <p>&copy; 2025 Red Dawn. All rights reserved.</p>
     </div>
-  </section>
-</main>
-
-  <footer class="footer"><div class="container"><p>&copy; 2025 Red Dawn. All rights reserved.</p></div></footer>
+  </footer>
 
   <!-- SCRIPTS -->
-<script src="js/main.js"></script>
-<script src="js/carousel.js"></script>
-<script src="js/modal.js"></script>
-<script src="js/scroll.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/scroll.js"></script>
+
   <!-- MODAL JOIN DISCORD -->
-<div class="modal hide" id="modal">
-  <div class="modal__overlay"></div>
-  <div class="modal__content">
-    <button class="modal__close" id="closeModal">&times;</button>
-    <img src="images/discord_logo.png" alt="Discord">
-    <p>เข้าร่วม Discord เพื่อรับข่าวสารและพูดคุยกับชาวเมือง</p>
-    <a href="https://discord.gg/baRzQdxu2r" class="btn--accent" target="_blank" rel="noopener noreferrer">
-      Join Discord
-    </a>
+  <div class="modal hide" id="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="closeModal">&times;</button>
+      <img src="images/discord_logo.png" alt="Discord" />
+      <p>
+        <span data-lang="th">เข้าร่วม Discord เพื่อรับข่าวสารและพูดคุยกับชาวเมือง</span>
+        <span data-lang="en">Join our Discord to get updates and chat with the community</span>
+      </p>
+      <a
+        href="https://discord.gg/baRzQdxu2r"
+        class="btn--accent"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span data-lang="th">เข้าร่วม Discord</span>
+        <span data-lang="en">Join Discord</span>
+      </a>
+    </div>
   </div>
-</div>
+
+  <!-- JavaScript สำหรับจัดการการแสดงภาษาตามปุ่มที่กด -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // ตั้งค่า default ให้เป็นภาษาไทย (lang-th)
+      document.documentElement.classList.add("lang-th");
+
+      // หาปุ่มเปลี่ยนภาษา แล้วตั้ง listener
+      const langButtons = document.querySelectorAll(".lang-btn");
+      langButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const selectedLang = this.getAttribute("data-lang"); // "th" หรือ "en"
+          // ลบคลาสภาษาก่อนหน้า (lang-th, lang-en)
+          document.documentElement.classList.remove("lang-th", "lang-en");
+          // ใส่คลาสใหม่ให้ <html> เช่น lang-en หรือ lang-th
+          document.documentElement.classList.add("lang-" + selectedLang);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
