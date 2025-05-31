@@ -481,6 +481,75 @@ button,.btn,.nav__link {position:relative;overflow:hidden;}
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
+
+/* -------------------------------------------------------------
+   1) ซ่อนเมนูหลัก (nav) และปุ่ม header__actions บางตัวเมื่อเป็นมือถือ
+   2) เมื่อ nav มีคลาส .open ให้แสดงเมนูแบบ full-width
+   3) จัดให้ <ul class="nav__list"> เป็นคอลัมน์ และไอเท็มทุกตัวถูกจัดกึ่งกลาง
+-------------------------------------------------------------- */
+
+/* 1) สำหรับหน้าจอเล็ก (max-width: 768px) */
+@media (max-width: 768px) {
+  /* ซ่อนเมนู nav ส่วนที่แสดงปกติ */
+  .header .nav {
+    display: none;
+  }
+
+  /* ซ่อนปุ่มเปลี่ยนภาษาและปุ่ม Join Discord บนมือถือ */
+  .header__actions .btn--icon,
+  .header__actions .btn--primary {
+    display: none;
+  }
+
+  /* ซ่อน nav-toggle ของฝั่งซ้าย (หากมี) เพราะในตัวอย่างเราลบออกเหลืออันเดียวแล้ว */
+  /* (ข้ามไปได้ถ้าคุณลบโค้ด HTML ฝั่งซ้ายออกเรียบร้อยแล้ว) */
+
+  /* 2) เมื่อเมนูเปิด (nav.open) ให้แสดงแบบเต็มพื้นที่ด้านบน */
+  .header .nav.open {
+    display: block;
+    position: absolute;
+    top: 100%;       /* ด้านล่างของ header */
+    left: 0;
+    width: 100%;     /* เต็มความกว้างหน้าจอ */
+    background-color: #000; /* ปรับสีพื้นหลัง (ตัวอย่างใช้ดำ) */
+    z-index: 999;    /* อยู่เหนือเนื้อหาอื่นๆ */
+  }
+
+  /* 3) ปรับ <ul class="nav__list"> ให้เป็นคอลัมน์ (flex) และกึ่งกลางทุกไอเท็ม */
+  .header .nav.open .nav__list {
+    display: flex;
+    flex-direction: column;  /* เรียงบนลงล่าง */
+    align-items: center;     /* จัดไอเท็มกึ่งกลางแนวนอน */
+    gap: 1rem;               /* ถ้าต้องการเว้นระยะห่างระหว่างแถว */
+    padding: 1.5rem 0;       /* เว้นช่องว่างบน-ล่างของรายการ */
+  }
+
+  /* ปรับ style ของแต่ละลิงก์ ให้ขยายเต็มความกว้างหรือแสดงกึ่งกลาง */
+  .header .nav.open .nav__list .nav__link {
+    display: block;
+    width: 100%;            /* ถ้าต้องการให้แต่ละลิงก์เต็มแถวทั้งหมด */
+    text-align: center;     /* จัดข้อความกึ่งกลางภายในลิงก์ */
+    padding: 0.75rem 0;     /* ปรับ Padding ให้คลิกง่าย */
+    color: #fff;            /* สีตัวอักษร (ยูสเซอร์เลือกได้) */
+    text-decoration: none;  /* เอาเส้นใต้ปกติออก */
+    font-size: 1.1rem;      /* ตัวอย่างปรับขนาดตัวหนังสือ */
+    /* ถ้าต้องการเปลี่ยนสีตอน hover */
+  }
+
+  /* เลือกเปลี่ยนสีตอน Hover */
+  .header .nav.open .nav__list .nav__link:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
+
+  /* ถ้าต้องการให้เนื้อหาด้านล่างเลื่อนไปข้างล่าง ให้ใช้ body { overflow: hidden; } ขณะเปิดเมนู (ปรับตามความต้องการ) */
+  /* ตัวอย่าง (ถ้าต้องการล็อก scroll หลังเปิดเมนู) */
+  /*
+  .nav.open ~ .main,
+  .nav.open ~ .footer {
+    display: none;
+  }
+  */
+}
   
   
 </style>
