@@ -19,15 +19,25 @@
 }
 
 /* reset */
-*{margin:0;padding:0;box-sizing:border-box;}
-html{font-size:16px;scroll-behavior:smooth;}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family:var(--font-sans);
-  background:var(--clr-deep);
-  color:var(--clr-text);
-  display:flex;flex-direction:column;
-  min-height:100vh;
-  padding-top:var(--header-height);
+  font-family: var(--font-sans);
+  background: var(--clr-deep);
+  color: var(--clr-text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: var(--header-height);
 }
 
 /* ปรับขนาดโลโก้กลางหน้า */
@@ -70,108 +80,204 @@ body {
 
 /* container */
 .container {
-  width: min(95%,1200px);
-  margin: 0 auto; padding:0 1rem;
+  width: min(95%, 1200px);
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* fixed header */
 .header {
-  position:fixed;top:0;left:0;
-  width:100%;height:var(--header-height);
-  background:var(--clr-dark);
-  border-bottom:2px solid var(--clr-red-dark);
-  z-index:1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: var(--clr-dark);
+  border-bottom: 2px solid var(--clr-red-dark);
+  z-index: 1000;
 }
+
 .header__inner {
-  display:flex;align-items:center;justify-content:space-between;
-  height:100%;padding:0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 1rem;
 }
+
 .header__logo img {
-  height:50px; /* เพิ่มขนาดโลโก้ให้ใหญ่ขึ้น */
-  filter:brightness(0) invert(1);
+  height: 50px;
+  /* เพิ่มขนาดโลโก้ให้ใหญ่ขึ้น */
+  filter: brightness(0) invert(1);
 }
+
 .nav__list {
-  display:flex;gap:2rem;list-style:none;
+  display: flex;
+  gap: 2rem;
+  list-style: none;
 }
+
 .nav__link {
-  color:var(--clr-text);font-size:1rem;
-  padding:0.5rem;transition:color .3s;
+  color: var(--clr-text);
+  font-size: 1rem;
+  padding: 0.5rem;
+  transition: color .3s;
+  height: 40px;
+  display: inline-flex;
+  /* หรือเท่ากับ header */
 }
-.nav__link:hover {color:var(--clr-red);}
+
+.nav__link:hover {
+  color: var(--clr-red);
+}
+
 .header__actions {
-  display:flex;align-items:center;gap:0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
+
 .btn--icon {
-  background:none;border:none;padding:0.25rem;
+  background: none;
+  border: none;
+  padding: 0.25rem;
 }
-.btn--icon img {width:28px;} /* flag icon ใหญ่ขึ้น */
+
+.btn--icon img {
+  width: 28px;
+}
+
+/* flag icon ใหญ่ขึ้น */
 .btn--primary {
-  background:var(--clr-accent);color:#fff;
-  padding:0.5rem 1rem;border:none;border-radius:4px;
-  cursor:pointer;transition:transform .2s;
+  background: var(--clr-accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform .2s;
 }
-.btn--primary:hover {transform:translateY(-2px);}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+}
+
 .nav-toggle {
-  display:none;flex-direction:column;gap:4px;
-  background:none;border:none;cursor:pointer;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
+
 .nav-toggle span {
-  display:block;width:24px;height:2px;background:var(--clr-text);
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--clr-text);
 }
 
 /* main content */
-.main {flex:1;overflow:auto;}
+.main {
+  flex: 1;
+  overflow: auto;
+}
 
 /* sections */
-.section {padding:4rem 0;}
-.section .container {padding-top:0;}
+.section {
+  padding: 4rem 0;
+}
+
+.section .container {
+  padding-top: 0;
+}
 
 /* Hero */
-.hero {text-align:center;padding:4rem 0 2rem;background:var(--clr-dark);}
-.hero__content {max-width:800px;margin:0 auto;}
+.hero {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  background: var(--clr-dark);
+}
+
+.hero__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .hero__title {
-  font-family:var(--font-deco);font-size:3rem;
-  color:var(--clr-red);margin-bottom:1rem;
+  font-family: var(--font-deco);
+  font-size: 3rem;
+  color: var(--clr-red);
+  margin-bottom: 1rem;
 }
+
 .hero__desc {
-  font-size:1.125rem;color:#ccc;
-  margin-bottom:2rem;line-height:1.6;
+  font-size: 1.125rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
-.hero__buttons {display:inline-flex;gap:1rem;}
+
+.hero__buttons {
+  display: inline-flex;
+  gap: 1rem;
+}
+
 .btn--accent {
-  background:var(--clr-red);color:#fff;
-  padding:0.75rem 1.5rem;border:none;border-radius:4px;
-  cursor:pointer;transition:transform .2s;
+  background: var(--clr-red);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform .2s;
 }
-.btn--accent:hover {transform:translateY(-2px);}
+
+.btn--accent:hover {
+  transform: translateY(-2px);
+}
+
 .btn--outline {
-  background:transparent;border:2px solid var(--clr-red);
-  color:var(--clr-red);padding:0.75rem 1.5rem;
-  border-radius:4px;cursor:pointer;
-  transition:background .3s,transform .2s;
+  background: transparent;
+  border: 2px solid var(--clr-red);
+  color: var(--clr-red);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .3s, transform .2s;
 }
+
 .btn--outline:hover {
-  background:rgba(255,51,51,0.1);transform:translateY(-2px);
+  background: rgba(255, 51, 51, 0.1);
+  transform: translateY(-2px);
 }
 
 /* Carousel */
 .carousel img {
   max-width: 75%;
-  max-height: 70vh; /* ลดความสูงลงจากเต็มจอ */
+  max-height: 70vh;
+  /* ลดความสูงลงจากเต็มจอ */
   object-fit: contain;
   display: block;
   margin: 0 auto;
-  border-radius: 10px; /* เพิ่มความสวยงามนิดนึง */
+  border-radius: 10px;
+  /* เพิ่มความสวยงามนิดนึง */
 }
 
 
 .carousel {
-  position:relative;max-width:800px;
-  margin:2rem auto;overflow:hidden;
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+  overflow: hidden;
 }
+
 [data-slides] {
-  display:flex;transition:transform .5s ease;
+  display: flex;
+  transition: transform .5s ease;
 }
+
 .carousel {
   position: relative;
   max-width: 800px;
@@ -211,9 +317,11 @@ body {
   cursor: pointer;
   z-index: 10;
 }
+
 .carousel__btn--prev {
   left: 1rem;
 }
+
 .carousel__btn--next {
   right: 1rem;
 }
@@ -228,24 +336,33 @@ body {
   font-size: 1.5rem;
   color: #fff;
   cursor: pointer;
-  z-index: 2002; /* อยู่บนสุด */
+  z-index: 2002;
+  /* อยู่บนสุด */
 }
 
 .modal__content p {
   font-size: 1rem;
   color: #eee;
   line-height: 1.6;
-  margin-bottom: 1.25rem; /* ✅ เว้นระยะจากข้อความถึงปุ่ม */
-  white-space: normal;    /* ✅ ป้องกันไม่ให้ตัดคำผิดจังหวะ */
+  margin-bottom: 1.25rem;
+  /* ✅ เว้นระยะจากข้อความถึงปุ่ม */
+  white-space: normal;
+  /* ✅ ป้องกันไม่ให้ตัดคำผิดจังหวะ */
   text-align: center;
 }
 
 .modal {
-  position:fixed;inset:0;
-  display:flex;align-items:center;justify-content:center;
-  z-index:2000;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
 }
-.modal.hide {display:none;}
+
+.modal.hide {
+  display: none;
+}
 
 .modal__content {
   position: relative;
@@ -255,7 +372,8 @@ body {
   max-width: 360px;
   width: 90%;
   text-align: center;
-  z-index: 2001; /* อยู่บน overlay */
+  z-index: 2001;
+  /* อยู่บน overlay */
 }
 
 .modal__overlay {
@@ -263,48 +381,91 @@ body {
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
   z-index: 2000;
-  pointer-events: none; /* ✅ สำคัญมาก! ให้คลิกทะลุได้ */
+  pointer-events: none;
+  /* ✅ สำคัญมาก! ให้คลิกทะลุได้ */
 }
 
 
 /* Lists */
 .rules-list {
-  list-style:decimal inside;line-height:1.8;color:#ccc;
-  margin-top:1rem;
+  list-style: decimal inside;
+  line-height: 1.8;
+  color: #ccc;
+  margin-top: 1rem;
 }
+
 .history article p {
-  margin-bottom:1.5rem;text-align:justify;color:#ccc;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  color: #ccc;
 }
+
 .play {
-  text-align:center;padding:4rem 0;
+  text-align: center;
+  padding: 4rem 0;
 }
+
 .play .btn--accent {
-  margin-top:1rem; /* ปรับไม่ให้ทับ text */
+  margin-top: 1rem;
+  /* ปรับไม่ให้ทับ text */
 }
 
 /* Footer */
 .footer {
-  background:var(--clr-dark);border-top:1px solid var(--clr-red-dark);
-  text-align:center;padding:1.5rem 0;margin-top:auto;
+  background: var(--clr-dark);
+  border-top: 1px solid var(--clr-red-dark);
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: auto;
 }
-.footer p {color:#777;font-size:0.875rem;}
+
+.footer p {
+  color: #777;
+  font-size: 0.875rem;
+}
 
 /* Ripple */
 .ripple {
-  position:absolute;border-radius:50%;transform:scale(0);
-  background:rgba(255,255,255,0.3);animation:ripple .6s linear;
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background: rgba(255, 255, 255, 0.3);
+  animation: ripple .6s linear;
 }
-@keyframes ripple {to{transform:scale(4);opacity:0;}}
-button,.btn,.nav__link {position:relative;overflow:hidden;}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+button,
+.btn,
+.nav__link {
+  position: relative;
+  overflow: hidden;
+}
 
 /* Responsive */
-@media(max-width:1024px){
-  .nav__list{display:none;}
-  .nav-toggle{display:flex;}
+@media(max-width:1024px) {
+  .nav__list {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
 }
-@media(max-width:768px){
-  .hero__title{font-size:2.5rem;}
-  .container{width:95%;}
+
+@media(max-width:768px) {
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .container {
+    width: 95%;
+  }
 }
 
 
@@ -315,11 +476,13 @@ button,.btn,.nav__link {position:relative;overflow:hidden;}
   overflow-x: auto;
   margin: 2rem 0;
 }
+
 .rules-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
 }
+
 .rules-table th,
 .rules-table td {
   border: 1px solid var(--clr-red);
@@ -327,12 +490,14 @@ button,.btn,.nav__link {position:relative;overflow:hidden;}
   text-align: left;
   vertical-align: top;
 }
+
 .rules-table th {
   background: var(--clr-dark);
   color: var(--clr-text);
 }
+
 .rules-table tr:nth-child(even) td {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 /* จัดหัวเรื่องให้อยู่กึ่งกลาง */
@@ -358,8 +523,10 @@ button,.btn,.nav__link {position:relative;overflow:hidden;}
 /* ตารางทั้งหมดกว้างเต็มพื้นที่ และกรอบชิดกัน */
 .rules-table {
   width: 100%;
-  border-collapse: collapse;       /* รวมเส้นกรอบ */
-  table-layout: fixed;             /* บังคับความกว้างคอลัมน์เท่ากัน */
+  border-collapse: collapse;
+  /* รวมเส้นกรอบ */
+  table-layout: fixed;
+  /* บังคับความกว้างคอลัมน์เท่ากัน */
 }
 
 /* กำหนดกรอบแดงให้ทุกเซลล์ */
@@ -368,7 +535,8 @@ button,.btn,.nav__link {position:relative;overflow:hidden;}
   border: 1px solid #E63946;
   padding: 0.75rem;
   vertical-align: top;
-  word-wrap: break-word;           /* ตัดบรรทัดอัตโนมัติ */
+  word-wrap: break-word;
+  /* ตัดบรรทัดอัตโนมัติ */
 }
 
 /* กำหนดอัตราส่วนความกว้างคอลัมน์ */
@@ -376,11 +544,13 @@ button,.btn,.nav__link {position:relative;overflow:hidden;}
 .rules-table td:nth-child(1) {
   width: 25%;
 }
+
 .rules-table th:nth-child(2),
 .rules-table td:nth-child(2) {
   width: 10%;
   text-align: center;
 }
+
 .rules-table th:nth-child(3),
 .rules-table td:nth-child(3) {
   width: 65%;
@@ -400,8 +570,10 @@ button,.btn,.nav__link {position:relative;overflow:hidden;}
   border: 1px solid #E63946;
   padding: 0.75rem;
   /* เพิ่มสองบรรทัดนี้ */
-  text-align: center;      /* กึ่งกลางแนวนอน */
-  vertical-align: middle;  /* กึ่งกลางแนวตั้ง */
+  text-align: center;
+  /* กึ่งกลางแนวนอน */
+  vertical-align: middle;
+  /* กึ่งกลางแนวตั้ง */
   word-wrap: break-word;
 }
 
@@ -414,19 +586,29 @@ button,.btn,.nav__link {position:relative;overflow:hidden;}
 
 /* ---------- สำหรับกรอบพื้นหลังของบทความประวัติเมือง ---------- */
 .history__box {
-  background: rgba(255, 255, 255, 0.05); /* พื้นหลังกรอบสีอ่อนโปร่งแสง */
-  border: 1px solid rgba(255, 255, 255, 0.15); /* เส้นกรอบสีขาวโปร่ง */
-  border-radius: 8px;          /* มุมโค้งมนเล็กน้อย */
-  padding: 2rem 1.5rem;        /* เว้นขอบด้านในให้พอเหมาะ */
-  margin-bottom: 2rem;         /* เว้นช่องว่างด้านล่าง */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* เงาบางๆ เพื่อให้กรอบลอยขึ้นมาจากพื้นหลัง */
-  line-height: 1.75;           /* เพิ่มการเว้นบรรทัดให้สบายตา */
+  background: rgba(255, 255, 255, 0.05);
+  /* พื้นหลังกรอบสีอ่อนโปร่งแสง */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  /* เส้นกรอบสีขาวโปร่ง */
+  border-radius: 8px;
+  /* มุมโค้งมนเล็กน้อย */
+  padding: 2rem 1.5rem;
+  /* เว้นขอบด้านในให้พอเหมาะ */
+  margin-bottom: 2rem;
+  /* เว้นช่องว่างด้านล่าง */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* เงาบางๆ เพื่อให้กรอบลอยขึ้นมาจากพื้นหลัง */
+  line-height: 1.75;
+  /* เพิ่มการเว้นบรรทัดให้สบายตา */
 }
 
 .history__box p {
-  margin-bottom: 1.25rem;      /* เว้นช่วงระหว่างย่อหน้า */
-  color: #ddd;                 /* สีตัวอักษรภายในกรอบ (อ่อนกว่าเล็กน้อยเพื่อความนุ่มนวล) */
-  text-align: justify;         /* จัดข้อความให้ชิดสองฝั่งเพื่อความสวยงาม */
+  margin-bottom: 1.25rem;
+  /* เว้นช่วงระหว่างย่อหน้า */
+  color: #ddd;
+  /* สีตัวอักษรภายในกรอบ (อ่อนกว่าเล็กน้อยเพื่อความนุ่มนวล) */
+  text-align: justify;
+  /* จัดข้อความให้ชิดสองฝั่งเพื่อความสวยงาม */
 }
 
 /* ถ้าต้องการให้หัวเรื่องภายในกรอบอยู่กึ่งกลาง สามารถประกาศเพิ่มได้ */
@@ -437,42 +619,50 @@ button,.btn,.nav__link {position:relative;overflow:hidden;}
 }
 
 
-<style>
-  .nav__link span {
-    text-decoration: none;
-  }
+<style>.nav__link span {
+  text-decoration: none;
+}
 
-  .nav__link,
-  .nav__link:visited,
-  .nav__link:hover,
-  .nav__link:focus,
-  .nav__link:active {
-    text-decoration: none !important;
-  }
+.nav__link,
+.nav__link:visited,
+.nav__link:hover,
+.nav__link:focus,
+.nav__link:active {
+  text-decoration: none !important;
+}
 
-  .nav__link.active span[data-lang="th"],
-  .nav__link.active span[data-lang="en"] {
-    color: #facc15 !important;
-    font-weight: bold;
-    text-decoration: none !important;
-  }
+.nav__link.active span[data-lang="th"],
+.nav__link.active span[data-lang="en"] {
+  color: #facc15 !important;
+  font-weight: bold;
+  text-decoration: none !important;
+}
 
-  /* ========== ส่วนเพิ่มสำหรับเมนูมือถือ (Hamburger) ========== */
+/* ========== ส่วนเพิ่มสำหรับเมนูมือถือ (Hamburger) ========== */
 
 /* เมื่อหน้าจอเล็กกว่า 1024px ให้ .nav__list ถูกซ่อนโดยดีฟอลต์อยู่แล้ว (จากโค้ดเดิม)
    แต่เมื่อ .nav__list ถูก toggle คลาส open แล้ว ให้แสดงเมนูขึ้นมา */
 
 @media(max-width: 1024px) {
   .nav__list.open {
-    display: flex;               /* แสดงเมนู (เดิมคือ display: none) */
-    flex-direction: column;      /* จัดรายการเป็นแนวตั้ง */
-    position: absolute;          /* ให้อยู่เหนือเนื้อหาอื่นๆ */
-    top: var(--header-height);   /* เริ่มตั้งที่ด้านล่างของ header */
-    right: 0;                    /* ชิดขวาเต็มหน้าจอ */
-    background: var(--clr-dark); /* พื้นหลังสีเดียวกับ header */
-    width: 100%;                 /* เต็มความกว้างจอ */
-    padding: 1rem 0;             /* เว้นช่องว่างด้านบน-ล่าง */
-    z-index: 999;                /* ให้อยู่เหนือเนื้อหาอื่น */
+    display: flex;
+    /* แสดงเมนู (เดิมคือ display: none) */
+    flex-direction: column;
+    /* จัดรายการเป็นแนวตั้ง */
+    position: absolute;
+    /* ให้อยู่เหนือเนื้อหาอื่นๆ */
+    top: var(--header-height);
+    /* เริ่มตั้งที่ด้านล่างของ header */
+    right: 0;
+    /* ชิดขวาเต็มหน้าจอ */
+    background: var(--clr-dark);
+    /* พื้นหลังสีเดียวกับ header */
+    width: 100%;
+    /* เต็มความกว้างจอ */
+    padding: 1rem 0;
+    /* เว้นช่องว่างด้านบน-ล่าง */
+    z-index: 999;
+    /* ให้อยู่เหนือเนื้อหาอื่น */
   }
 
   /* ปรับแต่ละลิงก์ในเมนูให้กดง่ายขึ้น (padding + เส้นแบ่ง) */
@@ -490,6 +680,7 @@ button,.btn,.nav__link {position:relative;overflow:hidden;}
 
 /* 1) สำหรับหน้าจอเล็ก (max-width: 768px) */
 @media (max-width: 768px) {
+
   /* ซ่อนเมนู nav ส่วนที่แสดงปกติ */
   .header .nav {
     display: none;
@@ -508,37 +699,51 @@ button,.btn,.nav__link {position:relative;overflow:hidden;}
   .header .nav.open {
     display: block;
     position: absolute;
-    top: 100%;       /* ด้านล่างของ header */
+    top: 100%;
+    /* ด้านล่างของ header */
     left: 0;
-    width: 100%;     /* เต็มความกว้างหน้าจอ */
-    background-color: #000; /* ปรับสีพื้นหลัง (ตัวอย่างใช้ดำ) */
-    z-index: 999;    /* อยู่เหนือเนื้อหาอื่นๆ */
+    width: 100%;
+    /* เต็มความกว้างหน้าจอ */
+    background-color: #000;
+    /* ปรับสีพื้นหลัง (ตัวอย่างใช้ดำ) */
+    z-index: 999;
+    /* อยู่เหนือเนื้อหาอื่นๆ */
   }
 
   /* 3) ปรับ <ul class="nav__list"> ให้เป็นคอลัมน์ (flex) และกึ่งกลางทุกไอเท็ม */
   .header .nav.open .nav__list {
     display: flex;
-    flex-direction: column;  /* เรียงบนลงล่าง */
-    align-items: center;     /* จัดไอเท็มกึ่งกลางแนวนอน */
-    gap: 1rem;               /* ถ้าต้องการเว้นระยะห่างระหว่างแถว */
-    padding: 1.5rem 0;       /* เว้นช่องว่างบน-ล่างของรายการ */
+    flex-direction: column;
+    /* เรียงบนลงล่าง */
+    align-items: center;
+    /* จัดไอเท็มกึ่งกลางแนวนอน */
+    gap: 1rem;
+    /* ถ้าต้องการเว้นระยะห่างระหว่างแถว */
+    padding: 1.5rem 0;
+    /* เว้นช่องว่างบน-ล่างของรายการ */
   }
 
   /* ปรับ style ของแต่ละลิงก์ ให้ขยายเต็มความกว้างหรือแสดงกึ่งกลาง */
   .header .nav.open .nav__list .nav__link {
     display: block;
-    width: 100%;            /* ถ้าต้องการให้แต่ละลิงก์เต็มแถวทั้งหมด */
-    text-align: center;     /* จัดข้อความกึ่งกลางภายในลิงก์ */
-    padding: 0.75rem 0;     /* ปรับ Padding ให้คลิกง่าย */
-    color: #fff;            /* สีตัวอักษร (ยูสเซอร์เลือกได้) */
-    text-decoration: none;  /* เอาเส้นใต้ปกติออก */
-    font-size: 1.1rem;      /* ตัวอย่างปรับขนาดตัวหนังสือ */
+    width: 100%;
+    /* ถ้าต้องการให้แต่ละลิงก์เต็มแถวทั้งหมด */
+    text-align: center;
+    /* จัดข้อความกึ่งกลางภายในลิงก์ */
+    padding: 0.75rem 0;
+    /* ปรับ Padding ให้คลิกง่าย */
+    color: #fff;
+    /* สีตัวอักษร (ยูสเซอร์เลือกได้) */
+    text-decoration: none;
+    /* เอาเส้นใต้ปกติออก */
+    font-size: 1.1rem;
+    /* ตัวอย่างปรับขนาดตัวหนังสือ */
     /* ถ้าต้องการเปลี่ยนสีตอน hover */
   }
 
   /* เลือกเปลี่ยนสีตอน Hover */
   .header .nav.open .nav__list .nav__link:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   /* ถ้าต้องการให้เนื้อหาด้านล่างเลื่อนไปข้างล่าง ให้ใช้ body { overflow: hidden; } ขณะเปิดเมนู (ปรับตามความต้องการ) */
@@ -550,6 +755,6 @@ button,.btn,.nav__link {position:relative;overflow:hidden;}
   }
   */
 }
-  
-  
+
+
 </style>
