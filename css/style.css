@@ -756,5 +756,22 @@ button,
   */
 }
 
+.play__box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  line-height: 1.75;
+  color: #ddd;
+  text-align: center;
+}
+.play__box h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--clr-red);
+}
+
 
 </style>
