@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ประวัติเมือง Red Dawn</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:wght@300;400;500;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 
   <!-- CSS สั้นๆ สำหรับซ่อน/แสดงข้อความตาม data-lang และจัดข้อความในประวัติให้อยู่ตรงกลาง -->
@@ -17,28 +16,31 @@
     span[data-lang] {
       display: none;
     }
+
     html.lang-th span[data-lang="th"] {
       display: inline;
     }
+
     html.lang-en span[data-lang="en"] {
       display: inline;
     }
 
     /* ---------- สำหรับกรอบพื้นหลังของบทความประวัติเมือง ---------- */
     .history__box {
-      background: rgba(255, 255, 255, 0.05); 
+      background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 8px;          
-      padding: 2rem 1.5rem;        
-      margin-bottom: 2rem;         
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      margin-bottom: 2rem;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      line-height: 1.75;           
+      line-height: 1.75;
     }
 
     .history__box p {
-      margin-bottom: 1.25rem;      
-      color: #ddd;                 
-      text-align: center;          /* จัดข้อความให้อยู่ตรงกลาง */
+      margin-bottom: 1.25rem;
+      color: #ddd;
+      text-align: center;
+      /* จัดข้อความให้อยู่ตรงกลาง */
     }
 
     /* จัดหัวข้อภายในกรอบให้กึ่งกลาง */
@@ -49,6 +51,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- HEADER -->
   <header class="header">
@@ -90,7 +93,7 @@
           </li>
         </ul>
       </nav>
-      
+
 
       <div class="header__actions">
         <!-- ปุ่มเปลี่ยนภาษา (ธงไทย / ธงอังกฤษ) -->
@@ -126,72 +129,261 @@
         <!-- กรอบพื้นหลังสำหรับเนื้อหา -->
         <div class="history__box">
           <article>
+            <style>
+              [data-lang] p {
+                text-align: left;
+                text-indent: 2em;
+                margin-bottom: 1em;
+                line-height: 1.6;
+              }
+
+              [data-lang] h4 {
+                text-align: center;
+                font-size: 1.5em;
+                margin-top: 2em;
+                margin-bottom: 0.5em;
+                color: #d4aa00;
+                /* สีโดดเด่น */
+              }
+
+              .active {
+                display: block;
+              }
+
+              [data-lang] {
+                font-family: 'Roboto', sans-serif;
+                font-size: 16px;
+                color: #ddd;
+              }
+            </style>
             <!-- Thai Content -->
             <div data-lang="th" class="active">
-              <p>
-                กลางหุบเขาทางตะวันตกเฉียงเหนือของทวีปที่ยังไม่ได้ถูกพัฒนา Red Dawn ถือกำเนิดขึ้นจากกลุ่มนักเดินทางกลุ่มหนึ่งที่หลงทางและตั้งค่ายพักชั่วคราวริมแม่น้ำ Silverbend จุดเริ่มต้นของเมืองเกิดจากการค้นพบสายแร่เงินที่ด้านเหนือของภูเขา Bitter Ridge ซึ่งเป็นที่มาของการตั้งรกรากแบบถาวร
+              <h4>แสงแรกเหนือแผ่นดินต้องห้าม</h4>
+              <p>ย้อนกลับไปยังปลายทศวรรษ 1840 บนผืนแผ่นดินอันกว้างใหญ่ของดินแดนตะวันตก
+                ยังไม่มีแผนที่ใดที่สามารถบันทึกรายละเอียดของภูมิประเทศอันน่าพิศวงแห่งนี้ได้ — ป่าเขาที่ลึกลับ
+                แม่น้ำสายใหญ่ที่ไหลเชี่ยวผ่านหุบเขา และที่ราบลุ่มซึ่งยังไม่เคยมีรอยเท้ามนุษย์ย่ำผ่าน</p>
+              <p>ชนเผ่าพื้นเมืองที่ตั้งถิ่นฐานอยู่มาหลายชั่วอายุคน เรียกดินแดนนี้ว่า <strong>“Doya-Ni”</strong> —
+                แปลได้ว่า <strong>“แสงแรกแห่งรุ่งอรุณ”</strong>
+                ชื่อนี้ไม่ได้มาเพียงเพราะพระอาทิตย์แรกของวันจะโผล่พ้นเส้นขอบฟ้าที่นี่ก่อนใคร
+                หากแต่เป็นเพราะพวกเขาเชื่อว่าแสงนี้ คือสิ่งศักดิ์สิทธิ์ที่ชำระล้างเงามืดของอดีต
+                และให้โอกาสเริ่มต้นใหม่แก่ทุกวิญญาณที่เดินทางมาถึง</p>
+              <p>ตำนานเล่าขานกันว่าครั้งหนึ่ง
+                ดินแดนแห่งนี้เคยเป็นสถานที่แห่งพันธะระหว่างเทพผู้พิทักษ์ผืนดินกับบรรพชนของเผ่า Doyanakhi
+                พวกเขาได้รับพรให้มีชีวิตสงบสุขท่ามกลางธรรมชาติ — จนกระทั่งเงามืดจากภายนอกเริ่มคืบคลานเข้ามา</p>
+              <p>ข่าวลือเกี่ยวกับ <em>"ดินแดนทองคำ"</em> ซึ่งซ่อนอยู่ใต้เนินเขาแถบนี้
+                เริ่มแพร่กระจายไปถึงชายแดนด้านตะวันออก นักสำรวจ นักล่าเงินรางวัล และพ่อค้าผู้ทะเยอทะยาน
+                ต่างเริ่มเดินทางข้ามทะเลทรายและภูเขาหิมะเพื่อค้นหาความมั่งคั่ง ทว่าทุกคนที่เข้าไปใน “เขตต้องห้าม”
+                ต่างกลับออกมาพร้อมบาดแผลทางใจ — หากยังมีชีวิตรอด</p>
+              <p>บางคนพูดถึง “เสียงกระซิบจากป่า” ที่ทำให้พวกเขาเห็นภาพหลอน
+                บางคนบอกว่าถูกเฝ้ามองโดยเงาดำที่เคลื่อนไหวเร็วกว่าเสียงลมหายใจของตัวเอง และบางคน... ก็ไม่เคยกลับมาอีกเลย
               </p>
-              <p>
-                บุคคลสำคัญในช่วงแรกคือ Clint Barlow อดีตทหารผ่านศึกจากสงครามกลางเมือง เขารวมกลุ่มผู้คนที่มุ่งแสวงหาโอกาสใหม่และนำพวกเขาสร้างชุมชนเล็ก ๆ ที่ภายหลังกลายเป็นศูนย์กลางของการค้าขายและกิจกรรมเหมืองแร่
+              <p>แม้จะมีความลี้ลับและความกลัวที่ปกคลุม แต่ก็มีบางกลุ่มที่เชื่อว่า “Doya-Ni” ยังรอใครสักคน —
+                ใครบางคนที่บริสุทธิ์พอจะฟังเสียงของผืนดิน ใครบางคนที่จะแปลงความหวังให้กลายเป็นเมือง</p>
+              <p>นั่นคือจุดเริ่มต้นของการก่อตั้งเมือง <strong>Red Dawn</strong> ในทศวรรษต่อมา —
+                เมืองที่ถือกำเนิดจากความกล้า ความศรัทธา และความลับอันดำมืดที่ยังรอการเปิดเผย</p>
+
+              <h4>แผ่นดินทอง หรือกับดักจากอดีต?</h4>
+              <p>ในปี ค.ศ. 1851 กลุ่มนักลงทุนจากเมืองใหญ่ทางตะวันออกอย่าง Saint Denis และ Annesburg ได้นำทุนมหาศาล
+                แผนผังเมือง และวิสัยทัศน์อันยิ่งใหญ่มายังชายฝั่งของทะเลสาบ Flat Iron
+                โดยหวังจะเปลี่ยนพื้นที่เงียบสงบแห่งนี้ให้กลายเป็นศูนย์กลางแห่งใหม่ของการค้าขายและการตั้งถิ่นฐาน</p>
+              <p>พวกเขาก่อตั้งเมืองเล็ก ๆ ชื่อว่า <strong>Blackwater</strong> — เมืองที่ในวันแรกเริ่มนั้นเรียบง่าย
+                เติบโตจากอุตสาหกรรมประมง การค้าขนสัตว์ป่า และการเดินเรือโดยใช้แม่น้ำเป็นเส้นทางหลักในการติดต่อกับภายนอก
               </p>
-              <p>
-                ภายในปีเดียว เมืองเติบโตอย่างรวดเร็ว มีการตั้งร้านเหล้า (Red Dawn Saloon) โรงเลื่อย โรงต้มเหล้าเถื่อน และจุดพักม้า ความมั่งคั่งดึงดูดทั้งพ่อค้า นายทุน และอาชญากร
-              </p>
-              <p>
-                Red Dawn กลายเป็นจุดตัดของอิสรภาพ ความโลภ และกฎหมายที่ไม่ทันสมัย เมืองจึงต้องพึ่งพากลุ่มนักล่าค่าหัวเอกชน เช่น Madeline Cain และสองพี่น้อง Claymore ซึ่งได้รับฉายาว่า "มือปืนฝั่งตะวันตก"
-              </p>
-              <p>
-                ในปีหนึ่งเกิดเหตุขัดแย้งกับชนพื้นเมืองเผ่า Zothoh พวกเขาอ้างว่าภูเขา Bitter Ridge เป็นสุสานศักดิ์สิทธิ์ การขุดเหมืองล่วงล้ำพื้นที่ต้องห้าม ทำให้เกิดการปะทะกัน รัฐบาลกลางจึงส่งทหารและตั้งสำนักงานศาลแห่งแรกในเมือง
-              </p>
-              <p>
-                เมืองพัฒนาอย่างต่อเนื่อง มีโทรเลข รถไฟ และตลาดค้าสัตว์ คุณครู Lydia Bell ก่อตั้งโรงเรียนประถมแห่งแรก
-              </p>
-              <p>
-                หลังเกิดดินถล่มในเหมืองและเศรษฐกิจตกต่ำในปีหนึ่ง ชาวเมืองได้รวมตัวกันตั้ง "สมาคมชาวเมือง" เพื่อฟื้นฟูเศรษฐกิจและช่วยเหลือผู้ได้รับผลกระทบ
-              </p>
-              <p>
-                ปลายทศวรรษ นักลงทุนจากฝั่งตะวันออก เช่น Saint Denis และ Blackwater เริ่มหลั่งไหลเข้ามา Red Dawn ได้รับการวางผังเมืองใหม่และจดทะเบียนเป็นเขตปกครองตนเอง
-              </p>
-              <p>
-                Eleanor Barlow ลูกสาวของ Clint ได้รับเลือกเป็นผู้ว่าคนแรก เธอส่งเสริมการเจรจากับเผ่า Zothoh และการค้ากับเมืองรอบข้าง
-              </p>
-              <p>
-                แม้ยังมีอาชญากรรมในเขตนอกเมือง แต่ Red Dawn กลายเป็นสัญลักษณ์แห่งความกล้าหาญ โอกาส และการอยู่รอดในดินแดนตะวันตก
-              </p>
+              <p>แต่มันไม่ได้คงความสงบอยู่นาน...</p>
+              <p>ไม่นานหลังจากที่เมืองเริ่มตั้งรกรากอย่างมั่นคง ข่าวลือเรื่อง <strong>แร่ทองคำ</strong>
+                ซึ่งฝังอยู่ตามลำธารทางตอนเหนือของภูเขา เริ่มแพร่กระจายออกไปในหมู่นักล่าโชค และนักแสวงหาเสรีภาพ
+                ข่าวนั้นแพร่ไปไกลเกินกว่าที่ใครจะควบคุมได้ — และกระแสของผู้คนก็มากับมัน</p>
+              <p>คาราวานของนักแสวงโชคหลั่งไหลเข้าสู่ Blackwater บ้างหวังร่ำรวยในชั่วข้ามคืน บ้างหนีอดีตที่ตามหลอกหลอน
+                แต่ไม่ว่าด้วยเหตุใด เมืองเล็ก ๆ แห่งนี้ก็ไม่ใช่ที่สงบอีกต่อไป</p>
+              <p>การมาถึงของผู้คนใหม่ ๆ เปลี่ยนโฉมหน้าเมืองอย่างรวดเร็ว ร้านสุรา ผับ โรงแรม และโรงนาเกิดขึ้นแทบจะข้ามคืน
+                การทะเลาะวิวาท การดวลปืน และการลอบฆ่าเริ่มกลายเป็นเรื่องปกติในยามค่ำคืน</p>
+              <p>บางคนพูดว่า “แผ่นดินนี้ให้ทุกอย่างที่คุณต้องการ” แต่บางคนก็พูดว่า “มันจะเอาคืนทุกอย่างที่คุณเคยมี”</p>
+              <p>และท่ามกลางเสียงขุดแร่ เสียงปืน และเสียงคำรามของผู้คน ไม่มีใครรู้เลยว่า
+                ใต้พื้นดินที่พวกเขากำลังขุดอยู่นั้น — อาจมีบางอย่าง... ที่ไม่ควรถูกปลุกขึ้นมา</p>
+
+              <h4>ความเจริญที่แลกมาด้วยความสูญเสีย</h4>
+              <p>ในช่วงปี ค.ศ. 1855–1860 เมือง Blackwater ไม่ใช่เพียงแค่จุดหมายปลายทางของผู้แสวงโชคอีกต่อไป
+                มันกลายเป็นเวทีขนาดใหญ่ที่ผู้คนหลากหลายต่างเดินทางมารวมตัวกัน — นักขุดทองผู้มีความหวังเปื้อนโคลน,
+                โจรภูเขาผู้มากับสายลม, นักบวชผู้พยายามรักษาศรัทธาในโลกที่ไร้พระเจ้า, โสเภณีที่หนีอดีต,
+                ทหารปลดประจำการที่ไร้ที่ไป, และผู้หลบหนีจากกฎหมายที่พร้อมแลกเปลี่ยนอดีตกับโอกาสใหม่</p>
+              <p>ผู้คนเหล่านี้ไม่ได้มาเพียงเพราะข่าวลือเรื่องทองคำ พวกเขามาเพราะ Blackwater คือ "เมืองแห่งโอกาส" —
+                โอกาสในการเริ่มต้นใหม่ หรือจมดิ่งลงไปในหายนะอย่างสมบูรณ์</p>
+              <p>เมืองเติบโตอย่างไร้ทิศทาง ขยายตัวรวดเร็วเกินกว่าที่ใครจะควบคุมได้
+                มันกลายเป็นหม้อหลอมขนาดยักษ์ที่เดือดพล่านไปด้วยความหวัง ความกลัว ความรัก และความโลภ
+                บางถนนเต็มไปด้วยเสียงหัวเราะและบทเพลง บางซอยกลับเต็มไปด้วยเสียงกระซิบของคนใกล้ตาย</p>
+              <p>ในเงามืดของความเจริญ สามกลุ่มทุนใหญ่เริ่มขยับตัว — พวกเขาไม่ได้สนใจการสร้างเมือง หากแต่สนใจการควบคุมมัน
+                พวกเขาแย่งชิงสิทธิ์เหนือ <strong>เหมืองทองคำ</strong>, <strong>ธนาคารกลาง</strong>, และแม้แต่
+                <strong>แหล่งน้ำสะอาด</strong> ที่มีค่าไม่ต่างจากเลือดในแผ่นดินแล้ง</p>
+              <p>แต่สิ่งที่น่ากลัวกว่าคือสิ่งที่ไม่มีใครเห็น...</p>
+              <p>ขณะที่อำนาจภายนอกต่อสู้กันด้วยกฎหมายและเงินตรา เครือข่ายของอาชญากรก็เติบโตใต้พื้นดินเงียบ ๆ —
+                ขยายตัวตามความโสมมของมนุษย์ ไม่ว่าจะเป็น <em>สมาคมลับ</em>, <em>กลุ่มมือปืนรับจ้าง</em>,
+                <em>ธุรกิจค้ามนุษย์</em> หรือแม้แต่ <strong>ตลาดใต้ดินของอาวุธสงคราม</strong></p>
+              <p>Blackwater เริ่มเปลี่ยนจาก “เมืองแห่งโอกาส” เป็น “เมืองแห่งเดิมพัน” — ที่ซึ่งทุกสิ่งมีราคา
+                และไม่ใช่ทุกคนที่จ่ายด้วยเงิน</p>
+              <p>บางคนสูญเสียเงินทอง บางคนสูญเสียศักดิ์ศรี... แต่ที่น่ากลัวที่สุด คือหลายคนสูญเสีย "ความเป็นมนุษย์"
+                โดยที่ไม่รู้ตัว</p>
+
+              <h4>ไฟที่ลุกโชนกลางเงาแห่งทองคำ</h4>
+              <p>ปี ค.ศ. 1865... คือปีที่เมือง Blackwater เปลี่ยนไปตลอดกาล</p>
+              <p>เช้าวันหนึ่งในฤดูใบไม้ร่วง ขณะที่เมืองกำลังตื่นขึ้นสู่วันใหม่ เสียงระเบิดดังสนั่นก็ฉีกผ่านท้องฟ้า
+                เสียงกระจกแตก ควันดำ และเสียงกรีดร้องกลบทุกบทสนทนาในร้านกาแฟริมถนน</p>
+              <p><strong>ธนาคารกลาง Blackwater ถูกปล้น</strong> — โดยกลุ่มที่เรียกตัวเองว่า <strong>แก๊ง
+                  Lucifer</strong> นำโดยชายผู้มีอดีตที่ถูกฝังลึกไว้ในเงามืดของเมืองนี้: <strong>Cain Voss</strong> —
+                อดีตทหารผู้เคยรับใช้กลุ่มนายทุน ก่อนจะถูกหักหลังและถูกทอดทิ้งเหมือนเศษเหล็กเก่าในสงคราม</p>
+              <p>การปล้นครั้งนั้นไม่ใช่แค่การแสวงหาเงิน แต่มันคือ “การลงโทษ”</p>
+              <p>ระเบิดถูกจุดขึ้นในห้องนิรภัยหลัก ผู้บริสุทธิ์กว่า 14 คนถูกจับเป็นตัวประกันกลางตลาดเช้า
+                ปืนถูกลั่นในทุกทิศ เสียงร้องไห้ของเด็ก และเสียงโวยวายของพ่อแม่กลายเป็นฉากหลังของความหายนะ</p>
+              <p>เมื่อทุกอย่างจบลง... มีผู้เสียชีวิตถึง <strong>23 ราย</strong> รวมถึงเจ้าหน้าที่ธนาคาร, พ่อค้า,
+                และชาวเมืองธรรมดาที่ไม่รู้เลยว่าชีวิตในวันนั้นคือวันสุดท้าย</p>
+              <p>ทองคำจำนวนมหาศาล — ที่ว่ากันว่ามีมูลค่ามากพอจะซื้อเมืองทั้งเมือง — หายไปโดยไร้ร่องรอย</p>
+              <p>ข่าวลือแพร่กระจายราวไฟป่า บ้างว่า Cain ฝังทองทั้งหมดไว้ใน <strong>หุบเขาเงา</strong>
+                ทางตอนเหนือของเมือง ใต้ต้นไม้ที่ไม่มีใครกล้าเข้าใกล้ บ้างก็ว่าเขาส่งมันผ่านเครือข่ายค้าของเถื่อน
+                ลอบข้ามชายแดนไปยังฝั่งตะวันออก โดยมีคนในของกลุ่มทุนให้ความร่วมมืออยู่ในเงามืด</p>
+              <p>ไม่เคยมีใครพบทองคำก้อนนั้นอีกเลย...</p>
+              <p>แต่สิ่งที่ยังหลงเหลืออยู่ในเมือง คือ “รอยแผล”</p>
+              <p>บาดแผลในใจของชาวเมือง ความไม่ไว้วางใจต่อผู้มีอำนาจ และการแตกแยกในชุมชนที่ลึกยิ่งกว่าเดิม
+                หลายครอบครัวต้องย้ายออก หลายคนหันเข้าสู่ความรุนแรง และสิ่งที่เติบโตขึ้นเงียบ ๆ... คือ
+                <strong>ความโกรธที่รอวันระเบิดอีกครั้ง</strong></p>
+              <p>เพราะในเมืองแห่งทองคำแห่งนี้ — บางครั้งสิ่งที่ส่องประกาย... ก็ไม่ใช่ทอง แต่เป็น
+                <strong>เปลวไฟของความพินาศ</strong></p>
+
+              <h4>แสงใหม่ หรือเงาเดิมในดินแดนแห่งโชคชะตา</h4>
+              <p>ในปี ค.ศ. 1880 ท่ามกลางร่องรอยของความสูญเสีย ความรุ่งเรือง และเลือดที่ไม่เคยล้างออกจากแผ่นดิน —
+                <strong>Blackwater</strong> ยังคงยืนหยัด</p>
+              <p>แม้เมืองจะถูกกัดกร่อนจากภายในโดยความโลภและการทรยศ และจากภายนอกโดยคลื่นของผู้แสวงโชคและนักล่าอำนาจ
+                มันก็ยังคงเป็น “จุดหมายปลายทางสุดท้าย” ของใครหลายคน</p>
+              <p>ผู้คนมากมายหลั่งไหลเข้ามาในแต่ละวัน — <strong>นักล่าค่าหัว</strong>ผู้แบกอดีตอันลึกลับไว้ใต้เสื้อคลุม,
+                <strong>พ่อค้า</strong>ที่พูดหวานแต่ใจเหี้ยม, <strong>นักการเมือง</strong>ผู้ใช้ถ้อยคำแทนคมมีด,
+                <strong>นักพนัน</strong>ที่เดิมพันทั้งชีวิตในไพ่ใบเดียว หรือแม้แต่
+                <strong>นักเดินทาง</strong>ที่ยังไม่รู้ด้วยซ้ำว่าตัวเองกำลังตามหาอะไร</p>
+              <p>สิ่งหนึ่งที่ทุกคนรู้... แต่ไม่มีใครพูดออกมา คือ <strong>ไม่มีใครในเมืองนี้ไร้ความลับ</strong></p>
+              <p>บางคนปิดบังอดีตเพื่อความอยู่รอด บางคนสร้างเรื่องหลอกลวงเพื่อครองอำนาจ
+                บางคนยอมขายจิตวิญญาณเพื่อแลกกับวันพรุ่งนี้ และบางคน... แค่พยายามจะลืมว่าเคยเป็นใคร</p>
+              <p><strong>Red Dawn</strong> ไม่ได้เป็นเพียงชื่อเมือง — มันคือ <strong>เวทีแห่งโชคชะตา</strong>
+                ที่ไม่มีสคริปต์ ไม่มีผู้กำกับ และไม่มีเส้นทางใดที่แน่นอน</p>
+              <p>ที่นี่ไม่มีพระเอก ไม่มีตัวร้าย มีเพียง “เรื่องเล่า” ที่รอให้ใครสักคนหยิบปากกาขึ้นมาเขียน</p>
+              <p>เรื่องเล่าที่จะยังคงอยู่ — หลังเสียงปืนเงียบลง</p>
+              <p>และคำถามที่ยังไม่มีใครตอบได้... คือคุณจะเป็น “ตำนาน” หรือ “คำสาป” ของเมืองแห่งนี้กันแน่?</p>
             </div>
 
-            <!-- English Content -->
             <div data-lang="en">
-              <p>
-                Nestled within the remote western highlands, Red Dawn began when a group of lost travelers set up camp along the Silverbend River. The discovery of silver in the Bitter Ridge mountains laid the foundation for permanent settlement.
+              <h4>The First Light over the Forbidden Land</h4>
+              <p>Back in the late 1840s, on the vast, untamed frontier of the American West, no map could capture the
+                enigmatic beauty of this land — a place of mysterious forests, roaring rivers, and untouched plains that
+                stretched endlessly beneath the sky.</p>
+              <p>The native tribes who had lived here for generations called this land <strong>“Doya-Ni”</strong>, which
+                means <strong>“The First Light of Dawn.”</strong> But this name wasn’t just about sunlight. They
+                believed it was sacred light — a divine force that cleansed the shadows of the past and offered new
+                beginnings to every soul who arrived here.</p>
+              <p>According to legend, this land was once a covenant ground between earth’s guardian spirits and the
+                ancestors of the Doyanakhi tribe. They were blessed with a peaceful life in harmony with nature — until
+                darkness crept in from beyond the mountains.</p>
+              <p>Rumors began to spread about a <em>"Golden Land"</em> hidden beneath the rolling hills. Word reached
+                the eastern frontier, drawing explorers, bounty hunters, and ambitious merchants westward — all seeking
+                wealth and glory. But those who crossed into the so-called “forbidden zone” came back broken… if they
+                came back at all.</p>
+              <p>Some spoke of whispers from the woods, voices that drove them mad. Others claimed they were watched —
+                followed by shifting shadows faster than breath. And many simply vanished into the wilderness, never to
+                be seen again.</p>
+              <p>Still, there were those who believed that <strong>Doya-Ni</strong> was waiting. Waiting for someone
+                pure-hearted enough to hear the land’s voice. Someone who could turn hope into a home — who could build
+                something that would last.</p>
+              <p>That belief gave birth to a town — <strong>Red Dawn</strong> — in the decade that followed. A town born
+                from courage, faith, and secrets buried deep beneath sacred soil, still waiting to be unearthed.</p>
+
+              <h4>Land of Gold — or a Trap from the Past?</h4>
+              <p>In the year 1851, a wave of ambitious investors from the booming eastern cities of Saint Denis and
+                Annesburg arrived at the tranquil shores of Flat Iron Lake. With them came cartloads of gold,
+                blueprints, and dreams — dreams of building a new frontier city that would rival the great capitals of
+                the East.</p>
+              <p>They laid the first stones of what would be called <strong>Blackwater</strong>, a humble lakeside
+                settlement that thrived on fishing, fur trading, and river navigation. At first, it was peaceful — a
+                place where pioneers carved a simple life out of the wilderness.</p>
+              <p>But peace is fragile in the West.</p>
+              <p>Rumors soon began to swirl: whispers of <strong>gold</strong> flowing through the northern streams,
+                buried beneath rocks older than the railroads, just waiting to be claimed. These tales spread like
+                wildfire through saloons, campsites, and wanted posters.</p>
+              <p>Before long, fortune-seekers flooded the town — prospectors with pickaxes, fugitives looking for a
+                second chance, and drifters with nothing to lose. Blackwater transformed overnight. Taverns sprung up
+                beside boarding houses. Gunfights replaced fishing songs. Hope was traded for greed, and dreams for
+                dust.</p>
+              <p>Some folks said, “This land gives you everything you want.” Others warned, “It takes everything you’ve
+                ever had.”</p>
+              <p>And beneath the footsteps of miners and the echo of revolvers, something older stirred — something that
+                perhaps should have been left buried in the dark silence of history.</p>
+
+              <h4>Prosperity — at the Price of Humanity</h4>
+              <p>Between 1855 and 1860, Blackwater was no longer just a destination for fortune-seekers. It had become a
+                grand stage for the outcasts and dreamers of the West — gold diggers covered in mud and desperation,
+                mountain thieves riding on whispers of the wind, preachers clinging to faith in a godless world,
+                prostitutes fleeing broken pasts, discharged soldiers with nowhere left to march, and fugitives trading
+                their sins for a second chance.</p>
+              <p>They didn’t come only for gold. They came because Blackwater had earned a new name on the frontier:
+                <strong>“The City of Second Chances.”</strong> But what no one said out loud was that second chances
+                often come with unseen costs.</p>
+              <p>The town’s growth was explosive, wild, and without a guiding hand. It became a boiling pot of hope,
+                fear, love, and unbridled greed. Some streets rang with laughter and fiddle tunes, while others echoed
+                with dying breaths and whispered deals in the shadows.</p>
+              <p>As civilization crept in, so did ambition. <strong>Three major investment groups</strong> began a
+                ruthless power struggle — fighting for control over everything from <strong>gold mines</strong> to the
+                <strong>central bank</strong> to something even more vital: <strong>clean water</strong>. Resources
+                weren’t just valuable — they were life or death.</p>
+              <p>But while the powerful waged open wars of politics and money, a darker game unfolded beneath the
+                surface…</p>
+              <p>In the shadows, a silent web of criminal enterprise took root. <em>Secret societies</em>, <em>hired gun
+                  networks</em>, <em>human trafficking rings</em>, and <strong>black-market arms dealers</strong> began
+                to operate freely, hidden beneath the noise of prosperity.</p>
+              <p>Blackwater was no longer “a land of opportunity.” It was becoming a city of wagers — where everything
+                could be bought, but not everything could be paid for in coin.</p>
+              <p>Some lost their fortune. Others lost their dignity. But the most tragic ones… were those who lost their
+                very humanity — and never even noticed it slipping away.</p>
+
+              <h4>Flames Beneath the Golden Shadow</h4>
+              <p>The year was 1865 — the year Blackwater would never forget.</p>
+              <p>On an autumn morning, as the town began to stir with the usual rhythm of merchants, fishermen, and
+                mothers guiding children to school, a thunderous explosion shattered the calm. Shards of glass rained
+                through the air, black smoke coiled up into the sky, and screams replaced small talk in every saloon and
+                bakery.</p>
+              <p><strong>The Blackwater Central Bank had been hit.</strong> The attackers? A ruthless crew known only as
+                the <strong>Lucifer Gang</strong>, led by a man once hailed as a hero: <strong>Cain Voss</strong> — a
+                former soldier, betrayed and cast aside by the very corporate elites he once bled for.</p>
+              <p>This wasn't just a heist. It was revenge.</p>
+              <p>The bank vault was obliterated. Fourteen innocent civilians were taken hostage in the town square.
+                Gunfire erupted in every direction. Children sobbed. Families were torn apart in a matter of minutes.
               </p>
-              <p>
-                Clint Barlow, a Civil War veteran, led a group of fortune seekers to build a small community that would grow into a mining and trade hub.
-              </p>
-              <p>
-                Within a year, saloons, sawmills, and horse stations had sprung up. The town's wealth attracted merchants, investors, and outlaws alike.
-              </p>
-              <p>
-                With outdated laws and growing violence, bounty hunters like Madeline Cain and the Claymore brothers were called to keep order in Red Dawn.
-              </p>
-              <p>
-                Conflicts arose with the native Zothoh tribe, who claimed Bitter Ridge was sacred land. After bloody clashes, the government intervened and built the town’s first courthouse.
-              </p>
-              <p>
-                The town evolved with telegraph lines, private rail, and a livestock market. Lydia Bell opened the first schoolhouse, fostering education in the town.
-              </p>
-              <p>
-                After a mining collapse triggered economic hardship, townsfolk formed the Citizens’ Society to rebuild and support affected families.
-              </p>
-              <p>
-                By the end of the decade, investors from Saint Denis and Blackwater brought new capital. Red Dawn was officially registered as an autonomous district.
-              </p>
-              <p>
-                Eleanor Barlow, Clint’s daughter, was elected governor. She pursued peace with the Zothoh and encouraged trade with neighboring towns.
-              </p>
-              <p>
-                Though outlaws still roamed the outer reaches, Red Dawn stood tall as a symbol of bravery, opportunity, and survival in the untamed West.
-              </p>
+              <p>When the smoke cleared, <strong>23 lives were lost</strong> — bank clerks, shopkeepers, townsfolk who
+                had never held a weapon in their lives. And along with them, <strong>a fortune in gold</strong>
+                disappeared into thin air — a sum rumored to be vast enough to buy the entire town ten times over.</p>
+              <p>Whispers spread like wildfire. Some claimed Cain had buried the gold in the <strong>Shadowed
+                  Valley</strong> to the north — beneath a cursed tree no man dared approach. Others believed the gold
+                had been smuggled east through a black market network, aided by traitors still loyal to the corporate
+                cartels he once served.</p>
+              <p>The truth? No one ever found the gold again.</p>
+              <p>But what remained was worse — <strong>scars</strong>. Wounds in the hearts of the townsfolk. A deep
+                mistrust toward power. A fracture in the community that would take years to mend. Some families fled.
+                Others turned to violence. And somewhere beneath it all, a slow-burning fury continued to grow.</p>
+              <p>Because in a land built on gold, what glitters most isn’t always treasure — sometimes, it’s the fire of
+                collapse waiting to consume it all.</p>
+
+              <h4>A New Light — or the Same Shadows in the Land of Fate?</h4>
+              <p>The year is 1880. Amid the scars of lost fortunes, fading glory, and blood that still stains the soil,
+                <strong>Blackwater stands</strong>.</p>
+              <p>The town has been worn down — from within, by greed and betrayal; from without, by waves of
+                opportunists, drifters, and the hungry claws of power. And yet, it endures — as the final destination
+                for many, and the first page of a story for others.</p>
+              <p>Every day, new faces arrive. <strong>Bounty hunters</strong> with shadows in their pasts.
+                <strong>Merchants</strong> whose smiles hide steel. <strong>Politicians</strong> who wield words like
+                weapons. <strong>Gamblers</strong> who risk their lives on a single card. And <strong>wanderers</strong>
+                — lost souls still searching for something, or someone, they can’t quite name.</p>
+              <p>One truth binds them all: <strong>No one in this town is without secrets</strong>.</p>
+              <p>Some hide their pasts just to survive. Others spin lies to gain control. Many have traded away their
+                souls for a tomorrow that may never come. And some... simply try to forget who they once were.</p>
+              <p><strong>Red Dawn</strong> is more than a name. It’s a <strong>stage of fate</strong> — a place without
+                a script, without a director, and with no guarantees.</p>
+              <p>There are no heroes here. No villains. Only stories — waiting to be written.</p>
+              <p>Stories that will remain, long after the gunfire fades.</p>
+              <p>And the question that lingers in every shadow: <strong>Will you become a legend — or a curse — in this
+                  land of Red Dawn?</strong></p>
             </div>
           </article>
         </div>
@@ -224,12 +416,7 @@
         <span data-lang="th">เข้าร่วม Discord เพื่อรับข่าวสารและพูดคุยกับชาวเมือง</span>
         <span data-lang="en">Join our Discord to get updates and chat with the community</span>
       </p>
-      <a
-        href="https://discord.gg/baRzQdxu2r"
-        class="btn--accent"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="https://discord.gg/baRzQdxu2r" class="btn--accent" target="_blank" rel="noopener noreferrer">
         <span data-lang="th">เข้าร่วม Discord</span>
         <span data-lang="en">Join Discord</span>
       </a>
