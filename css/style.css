@@ -469,10 +469,7 @@ button,
     width: 95%;
   }
 
-  .header__actions .btn--icon,
-  .header__actions .btn--primary {
-    display: none;
-  }
+
 }
 
 /* ตารางกฎ */
