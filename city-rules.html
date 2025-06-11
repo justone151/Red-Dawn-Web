@@ -11,21 +11,6 @@
   />
   <link rel="stylesheet" href="css/style.css" />
 
-<!-- CSS สำหรับซ่อน/แสดงข้อความตาม data-lang -->
-<style>
-  /* เริ่มต้น: ซ่อนข้อความ <span> ที่มี data-lang เท่านั้น */
-  span[data-lang] {
-    display: none;
-  }
-  /* ถ้า <html> มีคลาส lang-th จะแสดงเฉพาะ <span data-lang="th"> */
-  html.lang-th span[data-lang="th"] {
-    display: inline;
-  }
-  /* ถ้า <html> มีคลาส lang-en จะแสดงเฉพาะ <span data-lang="en"> */
-  html.lang-en span[data-lang="en"] {
-    display: inline;
-  }
-</style>
 
 </head>
 <body>
@@ -1230,26 +1215,6 @@
     </div>
   </div>
 
-  <!-- JavaScript สำหรับจัดการการแสดงภาษาตามปุ่มที่กด -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // ตั้งค่า default ให้เป็นภาษาไทย (lang-th)
-      document.documentElement.classList.add('lang-th');
 
-      // หาปุ่มเปลี่ยนภาษา แล้วตั้ง listener
-      const langButtons = document.querySelectorAll('.lang-btn');
-      langButtons.forEach((button) => {
-        button.addEventListener('click', function () {
-          const selectedLang = this.getAttribute('data-lang'); // "th" หรือ "en"
-
-          // ลบคลาสภาษาก่อนหน้า (lang-th, lang-en)
-          document.documentElement.classList.remove('lang-th', 'lang-en');
-
-          // ใส่คลาสใหม่ให้ <html> เช่น lang-en หรือ lang-th
-          document.documentElement.classList.add('lang-' + selectedLang);
-        });
-      });
-    });
-  </script>
 </body>
 </html>

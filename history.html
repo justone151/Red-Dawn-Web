@@ -10,46 +10,7 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- CSS สั้นๆ สำหรับซ่อน/แสดงข้อความตาม data-lang และจัดข้อความในประวัติให้อยู่ตรงกลาง -->
-  <style>
-    /* ซ่อนเฉพาะ <span> ที่มี data-lang */
-    span[data-lang] {
-      display: none;
-    }
 
-    html.lang-th span[data-lang="th"] {
-      display: inline;
-    }
-
-    html.lang-en span[data-lang="en"] {
-      display: inline;
-    }
-
-    /* ---------- สำหรับกรอบพื้นหลังของบทความประวัติเมือง ---------- */
-    .history__box {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 8px;
-      padding: 2rem 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      line-height: 1.75;
-    }
-
-    .history__box p {
-      margin-bottom: 1.25rem;
-      color: #ddd;
-      text-align: center;
-      /* จัดข้อความให้อยู่ตรงกลาง */
-    }
-
-    /* จัดหัวข้อภายในกรอบให้กึ่งกลาง */
-    .history__box h3 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      color: var(--clr-red);
-    }
-  </style>
 </head>
 
 <body>
@@ -423,24 +384,6 @@
     </div>
   </div>
 
-  <!-- JavaScript สำหรับจัดการการแสดงภาษาตามปุ่มที่กด -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // ตั้งค่า default ให้เป็นภาษาไทย (lang-th)
-      document.documentElement.classList.add("lang-th");
 
-      // หาปุ่มเปลี่ยนภาษา แล้วตั้ง listener
-      const langButtons = document.querySelectorAll(".lang-btn");
-      langButtons.forEach((button) => {
-        button.addEventListener("click", function () {
-          const selectedLang = this.getAttribute("data-lang"); // "th" หรือ "en"
-          // ลบคลาสภาษาก่อนหน้า (lang-th, lang-en)
-          document.documentElement.classList.remove("lang-th", "lang-en");
-          // ใส่คลาสใหม่ให้ <html> เช่น lang-en หรือ lang-th
-          document.documentElement.classList.add("lang-" + selectedLang);
-        });
-      });
-    });
-  </script>
 </body>
 </html>
