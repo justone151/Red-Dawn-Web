@@ -49,11 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // — Mobile menu toggle (เดิม) —
   document.querySelector('.nav-toggle').addEventListener('click', () => {
-    const nav = document.querySelector('.nav');
-    const navList = document.querySelector('.nav__list');
-    nav.classList.toggle('open');
-    navList.classList.toggle('open');
+    document.querySelector('.nav__list').classList.toggle('open');
   });
+});
+
 
   document.addEventListener("DOMContentLoaded", function () {
     const currentPath = window.location.pathname;
