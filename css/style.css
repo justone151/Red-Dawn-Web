@@ -107,7 +107,6 @@ body {
 
 .header__logo img {
   height: 50px;
-  /* เพิ่มขนาดโลโก้ให้ใหญ่ขึ้น */
   filter: brightness(0) invert(1);
 }
 
@@ -124,7 +123,6 @@ body {
   transition: color .3s;
   height: 40px;
   display: inline-flex;
-  /* หรือเท่ากับ header */
 }
 
 .nav__link:hover {
@@ -147,7 +145,6 @@ body {
   width: 28px;
 }
 
-/* flag icon ใหญ่ขึ้น */
 .btn--primary {
   background: var(--clr-accent);
   color: #fff;
@@ -257,12 +254,10 @@ body {
 .carousel img {
   max-width: 75%;
   max-height: 70vh;
-  /* ลดความสูงลงจากเต็มจอ */
   object-fit: contain;
   display: block;
   margin: 0 auto;
   border-radius: 10px;
-  /* เพิ่มความสวยงามนิดนึง */
 }
 
 
@@ -276,18 +271,6 @@ body {
 [data-slides] {
   display: flex;
   transition: transform .5s ease;
-}
-
-.carousel {
-  position: relative;
-  max-width: 800px;
-  margin: 2rem auto;
-  overflow: hidden;
-}
-
-[data-slides] {
-  display: flex;
-  transition: transform 0.5s ease;
   width: 100%;
 }
 
@@ -337,7 +320,6 @@ body {
   color: #fff;
   cursor: pointer;
   z-index: 2002;
-  /* อยู่บนสุด */
 }
 
 .modal__content p {
@@ -345,9 +327,7 @@ body {
   color: #eee;
   line-height: 1.6;
   margin-bottom: 1.25rem;
-  /* ✅ เว้นระยะจากข้อความถึงปุ่ม */
   white-space: normal;
-  /* ✅ ป้องกันไม่ให้ตัดคำผิดจังหวะ */
   text-align: center;
 }
 
@@ -373,7 +353,6 @@ body {
   width: 90%;
   text-align: center;
   z-index: 2001;
-  /* อยู่บน overlay */
 }
 
 .modal__overlay {
@@ -382,7 +361,6 @@ body {
   background: rgba(0, 0, 0, 0.6);
   z-index: 2000;
   pointer-events: none;
-  /* ✅ สำคัญมาก! ให้คลิกทะลุได้ */
 }
 
 
@@ -407,7 +385,6 @@ body {
 
 .play .btn--accent {
   margin-top: 1rem;
-  /* ปรับไม่ให้ทับ text */
 }
 
 /* Footer */
@@ -456,6 +433,31 @@ button,
   .nav-toggle {
     display: flex;
   }
+
+  .nav__list.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+    background: var(--clr-dark);
+    width: 100%;
+    padding: 1rem 0;
+    z-index: 999;
+  }
+
+  .nav__list.open .nav__link {
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* ===== โค้ดที่แก้ไขและเพิ่มเข้าไปใหม่ ===== */
+    display: block;
+    /* ทำให้ลิงก์ขยายเต็มบรรทัด */
+    width: 100%;
+    /* ยืนยันว่าเต็มความกว้าง */
+    text-align: center;
+    /* จัดตัวหนังสือให้อยู่ตรงกลาง */
+  }
 }
 
 @media(max-width:768px) {
@@ -466,10 +468,12 @@ button,
   .container {
     width: 95%;
   }
+
+  .header__actions .btn--icon,
+  .header__actions .btn--primary {
+    display: none;
+  }
 }
-
-
-/* … existing CSS … */
 
 /* ตารางกฎ */
 .table-responsive {
@@ -481,6 +485,7 @@ button,
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
+  table-layout: fixed;
 }
 
 .rules-table th,
@@ -489,6 +494,7 @@ button,
   padding: 0.75rem;
   text-align: left;
   vertical-align: top;
+  word-wrap: break-word;
 }
 
 .rules-table th {
@@ -500,7 +506,6 @@ button,
   background: rgba(255, 255, 255, 0.05);
 }
 
-/* จัดหัวเรื่องให้อยู่กึ่งกลาง */
 .section h2 {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -511,35 +516,10 @@ button,
   text-align: center;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  color: #F1FAEE;
+  padding: 0.5rem 0;
 }
 
-/* ให้ container ทุกตารางเท่ากัน */
-.table-responsive {
-  width: 100%;
-  margin-bottom: 2rem;
-  overflow-x: auto;
-}
-
-/* ตารางทั้งหมดกว้างเต็มพื้นที่ และกรอบชิดกัน */
-.rules-table {
-  width: 100%;
-  border-collapse: collapse;
-  /* รวมเส้นกรอบ */
-  table-layout: fixed;
-  /* บังคับความกว้างคอลัมน์เท่ากัน */
-}
-
-/* กำหนดกรอบแดงให้ทุกเซลล์ */
-.rules-table th,
-.rules-table td {
-  border: 1px solid #E63946;
-  padding: 0.75rem;
-  vertical-align: top;
-  word-wrap: break-word;
-  /* ตัดบรรทัดอัตโนมัติ */
-}
-
-/* กำหนดอัตราส่วนความกว้างคอลัมน์ */
 .rules-table th:nth-child(1),
 .rules-table td:nth-child(1) {
   width: 25%;
@@ -556,70 +536,21 @@ button,
   width: 65%;
 }
 
-/* จัดให้ caption อยู่ตรงกลาง */
-.rules-table caption {
-  caption-side: top;
-  text-align: center;
-  padding: 0.5rem 0;
-  font-weight: bold;
-  color: #F1FAEE;
-}
-
 .rules-table th,
 .rules-table td {
   border: 1px solid #E63946;
-  padding: 0.75rem;
-  /* เพิ่มสองบรรทัดนี้ */
   text-align: center;
-  /* กึ่งกลางแนวนอน */
   vertical-align: middle;
-  /* กึ่งกลางแนวตั้ง */
-  word-wrap: break-word;
 }
 
 .nav__link.active span[data-lang="th"],
 .nav__link.active span[data-lang="en"] {
-  color: #ac8c0c !important;
+  color: #facc15 !important;
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
-/* ---------- สำหรับกรอบพื้นหลังของบทความประวัติเมือง ---------- */
-.history__box {
-  background: rgba(255, 255, 255, 0.05);
-  /* พื้นหลังกรอบสีอ่อนโปร่งแสง */
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  /* เส้นกรอบสีขาวโปร่ง */
-  border-radius: 8px;
-  /* มุมโค้งมนเล็กน้อย */
-  padding: 2rem 1.5rem;
-  /* เว้นขอบด้านในให้พอเหมาะ */
-  margin-bottom: 2rem;
-  /* เว้นช่องว่างด้านล่าง */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  /* เงาบางๆ เพื่อให้กรอบลอยขึ้นมาจากพื้นหลัง */
-  line-height: 1.75;
-  /* เพิ่มการเว้นบรรทัดให้สบายตา */
-}
-
-.history__box p {
-  margin-bottom: 1.25rem;
-  /* เว้นช่วงระหว่างย่อหน้า */
-  color: #ddd;
-  /* สีตัวอักษรภายในกรอบ (อ่อนกว่าเล็กน้อยเพื่อความนุ่มนวล) */
-  text-align: justify;
-  /* จัดข้อความให้ชิดสองฝั่งเพื่อความสวยงาม */
-}
-
-/* ถ้าต้องการให้หัวเรื่องภายในกรอบอยู่กึ่งกลาง สามารถประกาศเพิ่มได้ */
-.history__box h3 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: var(--clr-red);
-}
-
-
-<style>.nav__link span {
+.nav__link span {
   text-decoration: none;
 }
 
@@ -631,129 +562,26 @@ button,
   text-decoration: none !important;
 }
 
-.nav__link.active span[data-lang="th"],
-.nav__link.active span[data-lang="en"] {
-  color: #facc15 !important;
-  font-weight: bold;
-  text-decoration: none !important;
+.history__box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  line-height: 1.75;
 }
 
-/* ========== ส่วนเพิ่มสำหรับเมนูมือถือ (Hamburger) ========== */
-
-/* เมื่อหน้าจอเล็กกว่า 1024px ให้ .nav__list ถูกซ่อนโดยดีฟอลต์อยู่แล้ว (จากโค้ดเดิม)
-   แต่เมื่อ .nav__list ถูก toggle คลาส open แล้ว ให้แสดงเมนูขึ้นมา */
-
-@media(max-width: 1024px) {
-  .nav__list.open {
-    display: flex;
-    /* แสดงเมนู (เดิมคือ display: none) */
-    flex-direction: column;
-    /* จัดรายการเป็นแนวตั้ง */
-    position: absolute;
-    /* ให้อยู่เหนือเนื้อหาอื่นๆ */
-    top: var(--header-height);
-    /* เริ่มตั้งที่ด้านล่างของ header */
-    right: 0;
-    /* ชิดขวาเต็มหน้าจอ */
-    background: var(--clr-dark);
-    /* พื้นหลังสีเดียวกับ header */
-    width: 100%;
-    /* เต็มความกว้างจอ */
-    padding: 1rem 0;
-    /* เว้นช่องว่างด้านบน-ล่าง */
-    z-index: 999;
-    /* ให้อยู่เหนือเนื้อหาอื่น */
-  }
-
-  /* ปรับแต่ละลิงก์ในเมนูให้กดง่ายขึ้น (padding + เส้นแบ่ง) */
-  .nav__list.open .nav__link {
-    padding: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
+.history__box p {
+  margin-bottom: 1.25rem;
+  color: #ddd;
+  text-align: justify;
 }
 
-/* -------------------------------------------------------------
-   1) ซ่อนเมนูหลัก (nav) และปุ่ม header__actions บางตัวเมื่อเป็นมือถือ
-   2) เมื่อ nav มีคลาส .open ให้แสดงเมนูแบบ full-width
-   3) จัดให้ <ul class="nav__list"> เป็นคอลัมน์ และไอเท็มทุกตัวถูกจัดกึ่งกลาง
--------------------------------------------------------------- */
-
-/* 1) สำหรับหน้าจอเล็ก (max-width: 768px) */
-@media (max-width: 768px) {
-
-  /* ซ่อนเมนู nav ส่วนที่แสดงปกติ */
-  .header .nav {
-    display: none;
-  }
-
-  /* ซ่อนปุ่มเปลี่ยนภาษาและปุ่ม Join Discord บนมือถือ */
-  .header__actions .btn--icon,
-  .header__actions .btn--primary {
-    display: none;
-  }
-
-  /* ซ่อน nav-toggle ของฝั่งซ้าย (หากมี) เพราะในตัวอย่างเราลบออกเหลืออันเดียวแล้ว */
-  /* (ข้ามไปได้ถ้าคุณลบโค้ด HTML ฝั่งซ้ายออกเรียบร้อยแล้ว) */
-
-  /* 2) เมื่อเมนูเปิด (nav.open) ให้แสดงแบบเต็มพื้นที่ด้านบน */
-  .header .nav.open {
-    display: block;
-    position: absolute;
-    top: 100%;
-    /* ด้านล่างของ header */
-    left: 0;
-    width: 100%;
-    /* เต็มความกว้างหน้าจอ */
-    background-color: #000;
-    /* ปรับสีพื้นหลัง (ตัวอย่างใช้ดำ) */
-    z-index: 999;
-    /* อยู่เหนือเนื้อหาอื่นๆ */
-  }
-
-  /* 3) ปรับ <ul class="nav__list"> ให้เป็นคอลัมน์ (flex) และกึ่งกลางทุกไอเท็ม */
-  .header .nav.open .nav__list {
-    display: flex;
-    flex-direction: column;
-    /* เรียงบนลงล่าง */
-    align-items: center;
-    /* จัดไอเท็มกึ่งกลางแนวนอน */
-    gap: 1rem;
-    /* ถ้าต้องการเว้นระยะห่างระหว่างแถว */
-    padding: 1.5rem 0;
-    /* เว้นช่องว่างบน-ล่างของรายการ */
-  }
-
-  /* ปรับ style ของแต่ละลิงก์ ให้ขยายเต็มความกว้างหรือแสดงกึ่งกลาง */
-  .header .nav.open .nav__list .nav__link {
-    display: block;
-    width: 100%;
-    /* ถ้าต้องการให้แต่ละลิงก์เต็มแถวทั้งหมด */
-    text-align: center;
-    /* จัดข้อความกึ่งกลางภายในลิงก์ */
-    padding: 0.75rem 0;
-    /* ปรับ Padding ให้คลิกง่าย */
-    color: #fff;
-    /* สีตัวอักษร (ยูสเซอร์เลือกได้) */
-    text-decoration: none;
-    /* เอาเส้นใต้ปกติออก */
-    font-size: 1.1rem;
-    /* ตัวอย่างปรับขนาดตัวหนังสือ */
-    /* ถ้าต้องการเปลี่ยนสีตอน hover */
-  }
-
-  /* เลือกเปลี่ยนสีตอน Hover */
-  .header .nav.open .nav__list .nav__link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-
-  /* ถ้าต้องการให้เนื้อหาด้านล่างเลื่อนไปข้างล่าง ให้ใช้ body { overflow: hidden; } ขณะเปิดเมนู (ปรับตามความต้องการ) */
-  /* ตัวอย่าง (ถ้าต้องการล็อก scroll หลังเปิดเมนู) */
-  /*
-  .nav.open ~ .main,
-  .nav.open ~ .footer {
-    display: none;
-  }
-  */
+.history__box h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--clr-red);
 }
 
 .play__box {
@@ -767,11 +595,9 @@ button,
   color: #ddd;
   text-align: center;
 }
+
 .play__box h3 {
   text-align: center;
   margin-bottom: 1.5rem;
   color: var(--clr-red);
 }
-
-
-</style>
