@@ -1,3 +1,30 @@
+/* ประกาศฟอนต์ใหม่ที่เราจะใช้ */
+@font-face {
+  font-family: 'SOV_MuekMod'; /* ตั้งชื่อฟอนต์แฟมิลี่ของเรา */
+  src: url('../fonts/SOV_MuekMod.woff2') format('woff2'),
+       url('../fonts/SOV_MuekMod.woff') format('woff');
+  font-weight: normal; /* น้ำหนักปกติ */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SOV_MuekMod'; /* ใช้ชื่อเดียวกัน */
+  src: url('../fonts/SOV_MuekMod_Bold.woff2') format('woff2'),
+       url('../fonts/SOV_MuekMod_Bold.woff') format('woff');
+  font-weight: bold; /* น้ำหนักตัวหนา */
+  font-style: normal;
+}
+
+/* เพิ่มการประกาศฟอนต์ Noto Serif Thai */
+@font-face {
+  font-family: 'Noto Serif Thai';
+  src: url('../fonts/NotoSerifThai-Regular.woff2') format('woff2'),
+       url('../fonts/NotoSerifThai-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* มองหา :root ของคุณแล้วแก้ไขให้เป็นแบบนี้ */
 :root {
   --clr-dark: #121212;
   --clr-deep: #0a0a0a;
@@ -6,7 +33,11 @@
   --clr-accent: #5865F2;
   --clr-text: #eee;
   --font-sans: 'Roboto', sans-serif;
-  --font-deco: 'Pirata One', cursive;
+  --font-deco: 'Pirata One', cursive; /* ฟอนต์ตกแต่งรอง */
+  --font-redm: 'Rye', cursive; /* ฟอนต์อังกฤษสไตล์ RedM */
+  --font-thai-main: 'SOV_MuekMod', sans-serif; /* ฟอนต์ไทยหลัก */
+  --font-typewriter: 'Special Elite', monospace;
+  --color-redm: #c42c2c;
   --header-height: 64px;
 }
 
@@ -597,4 +628,580 @@ button,
   text-align: center;
   margin-bottom: 1.5rem;
   color: var(--clr-red);
+}
+
+/* ========== NEW MODERN TABLE DESIGN ========== */
+
+/* 1. Wrapper ของตาราง */
+.table-responsive {
+  margin-bottom: 3rem; /* เพิ่มระยะห่างระหว่างตาราง */
+}
+
+/* 2. ตัวตารางหลัก (<table>) */
+.rules-table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.02); /* สีพื้นหลังโปร่งแสงเล็กน้อย */
+  border-radius: 8px; /* ทำให้ขอบตารางโค้งมน */
+  overflow: hidden;   /* สำคัญมากเพื่อให้ border-radius แสดงผล */
+  font-size: 0.95rem; /* ปรับขนาดฟอนต์ให้อ่านง่ายขึ้น */
+}
+
+/* 3. Caption หรือหัวข้อใหญ่ของตาราง */
+.rules-table caption {
+  font-family: var(--font-deco); /* ใช้ฟอนต์ตกแต่ง */
+  font-size: 2rem;
+  color: var(--clr-red);
+  padding: 1.5rem 0;
+  text-transform: uppercase;
+}
+
+/* 4. แถวหัวตาราง (<th>) */
+.rules-table th {
+  background-color: var(--clr-red-dark); /* ใช้สีแดงเข้มเป็นพื้นหลัง */
+  color: var(--clr-text);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 1rem;
+  border: none; /* เอาเส้นขอบเก่าออก */
+  text-align: center;
+}
+
+/* 5. เซลล์ข้อมูล (<td>) */
+.rules-table td {
+  padding: 1rem;
+  color: #ccc;
+  border: none; /* เอาเส้นขอบเก่าออก */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* สร้างเส้นขั้นแนวนอนบางๆ */
+  vertical-align: middle;
+}
+
+/* 6. สไตล์สำหรับแถวข้อมูล (<tr>) */
+.rules-table tbody tr {
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* ลบเส้นขอบของแถวสุดท้ายออกเพื่อความสวยงาม */
+.rules-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* 7. เพิ่มไฮไลท์เมื่อเอาเมาส์ไปชี้ (Hover) */
+.rules-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+/* ========== HISTORY PAGE - FLAIR & DIVIDERS ========== */
+
+/* 1. เส้นคั่นใต้หัวข้อย่อย h4 */
+.history__box h4::after {
+  content: ''; /* สร้าง element เสมือนขึ้นมา */
+  display: block; /* ทำให้เป็น block element */
+  width: 40%; /* ความกว้างของเส้น */
+  max-width: 150px; /* ความกว้างสูงสุด */
+  height: 1px; /* ความหนาของเส้น */
+  margin: 1.25rem auto 0; /* จัดให้อยู่กึ่งกลางและเว้นระยะห่างด้านบน */
+  /* ไล่ระดับสีของเส้นให้ดูมีมิติ */
+  background: linear-gradient(to right, 
+    transparent, 
+    var(--clr-red), 
+    transparent
+  );
+}
+
+/* 2. ทำให้ Drop Cap (ตัวอักษรแรก) ดูโดดเด่นขึ้นอีก */
+.history__box article>div>p:first-of-type::first-letter {
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5); /* เพิ่มเงาให้ตัวอักษร */
+}
+
+/* 3. เพิ่มเอฟเฟกต์ให้กับ .reveal ที่เราเพิ่งใส่ใน HTML */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ========== NEW "PLAY WITH US" PAGE DESIGN ========== */
+
+/* ส่วนข้อความเกริ่นนำ */
+.play-intro {
+  text-align: center;
+  color: #ccc;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+/* ส่วนของการ์ดเลือกบทบาท */
+.archetypes-section {
+  margin-bottom: 3rem;
+}
+
+.archetypes-title {
+  font-family: var(--font-deco);
+  color: var(--clr-red);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: normal;
+}
+
+.archetype-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-icon {
+  font-size: 3rem;
+  color: var(--clr-red);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.card-title {
+  font-family: var(--font-deco);
+  font-size: 1.8rem;
+  color: var(--clr-text);
+  margin-bottom: 0.75rem;
+  font-weight: normal;
+}
+
+.card-desc {
+  color: #aaa;
+  line-height: 1.6;
+  flex-grow: 1; /* ทำให้ข้อความขยายเพื่อดันปุ่มลงไป */
+}
+
+/* ส่วนข้อความสรุปและปุ่มสุดท้าย */
+.play-outro {
+  text-align: center;
+  color: #ccc;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 3rem;
+  margin-top: 2rem;
+}
+
+.play-outro .hero__buttons {
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+
+
+/* ========== ULTIMATE "REDM" CINEMATIC DESIGN ========== */
+
+:root {
+  --font-redm: 'Rye', cursive;
+  --color-redm: #c42c2c;
+}
+
+/* 1. HERO SCENE & ADVANCED CAMPFIRE EFFECT */
+.hero-campfire {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background-color: #0c0a1a;
+  background-image: 
+    radial-gradient(1px 1px at 20% 20%, #fff, transparent),
+    radial-gradient(1px 1px at 80% 10%, #fff, transparent),
+    radial-gradient(1px 1px at 50% 50%, #fff, transparent),
+    radial-gradient(2px 2px at 30% 70%, #fff, transparent),
+    radial-gradient(2px 2px at 90% 40%, #fff, transparent),
+    radial-gradient(1px 1px at 10% 90%, #fff, transparent);
+}
+
+/* แสงไฟจากกองไฟ (สมจริงขึ้น) */
+.hero-campfire::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200%;
+  height: 100%;
+  /* ไล่ระดับสีไฟให้มีหลายชั้น (เหลือง -> ส้ม -> แดง -> โปร่งใส) */
+  background: radial-gradient(circle, 
+    rgba(255, 200, 0, 0.5) 0%,   /* สีเหลืองตรงกลาง */
+    rgba(255, 100, 0, 0.4) 10%,  /* สีส้ม */
+    rgba(255, 69, 0, 0.2) 25%,   /* สีแดง */
+    rgba(255, 69, 0, 0) 50%     /* จางหาย */
+  );
+  z-index: 1;
+  animation: flicker 6s infinite alternate; /* ทำให้ไฟกระพริบเร็วขึ้น */
+}
+
+@keyframes flicker {
+  0%   { transform: translateX(-50%) scale(1, 1); opacity: 0.7; }
+  25%  { transform: translateX(-51%) scale(1.05, 0.95); opacity: 0.8; }
+  50%  { transform: translateX(-49%) scale(0.98, 1.02); opacity: 0.6; }
+  75%  { transform: translateX(-50%) scale(1.02, 0.98); opacity: 0.9; }
+  100% { transform: translateX(-51%) scale(1, 1); opacity: 0.7; }
+}
+
+/* ประกายไฟ (Sparks) */
+.sparks {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.sparks span {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  height: 3px;
+  background: #ffc400;
+  border-radius: 50%;
+  animation: sparkle-rise 5s infinite;
+  opacity: 0;
+}
+
+@keyframes sparkle-rise {
+  0% { transform: translateY(0) translateX(0); opacity: 1; }
+  100% { transform: translateY(-90vh) translateX(var(--spread, 0)); opacity: 0; }
+}
+
+/* ทำให้ประกายไฟแต่ละอันไม่เหมือนกัน */
+.sparks span:nth-child(1) { animation-duration: 4s; animation-delay: 0.5s; --spread: -150px; }
+.sparks span:nth-child(2) { animation-duration: 6s; animation-delay: 1.2s; --spread: 120px; }
+.sparks span:nth-child(3) { animation-duration: 5s; animation-delay: 2.5s; --spread: 200px; }
+.sparks span:nth-child(4) { animation-duration: 7s; animation-delay: 3s; --spread: -250px; }
+.sparks span:nth-child(5) { animation-duration: 4.5s; animation-delay: 0.2s; --spread: -80px; }
+.sparks span:nth-child(6) { animation-duration: 8s; animation-delay: 4s; --spread: 50px; }
+.sparks span:nth-child(7) { animation-duration: 5.5s; animation-delay: 1.8s; --spread: -180px; }
+.sparks span:nth-child(8) { animation-duration: 6.5s; animation-delay: 3.5s; --spread: 150px; }
+
+
+/* 2. CONTENT & ANIMATION */
+.hero-campfire__content {
+  position: relative;
+  z-index: 3;
+  padding: 1rem;
+}
+
+@keyframes ember-rise {
+  from { opacity: 0; transform: translateY(60px); filter: blur(2px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+.animate-ember {
+  display: block;
+  opacity: 0;
+  animation: ember-rise 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+/* 3. REDM TYPOGRAPHY & BIGGER LOGO */
+.hero-campfire__logo {
+    width: 400px; /* <<-- ขยายโลโก้ให้ใหญ่ขึ้น */
+    height: auto;
+    margin: 0 auto 2rem auto;
+    filter: brightness(1.2);
+}
+
+.hero-campfire__title {
+  font-family: var(--font-redm);
+  font-size: clamp(4rem, 12vw, 8rem);
+  color: var(--color-redm);
+  font-weight: normal;
+  line-height: 1.2;
+  text-shadow: 2px 2px 0px #000, 4px 4px 10px rgba(0,0,0,0.8);
+  letter-spacing: 2px;
+}
+
+.hero-campfire__desc {
+  font-family: 'Noto Serif Thai', serif;
+  font-weight: 300;
+  color: #ccc;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,1);
+}
+
+.hero-campfire__buttons .btn--accent {
+  background-color: var(--color-redm);
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 0.8rem 2rem;
+  border: none;
+  font-weight: 700;
+}
+
+/* 4. FEATURES SECTION */
+.features-section--campfire {
+  padding: 4rem 0;
+  background: var(--clr-dark);
+}
+
+
+/* ========== "WOW" CINEMATIC TRIPTYCH DESIGN ========== */
+
+/* ส่วน wrapper ของดีไซน์ใหม่ */
+.triptych-section {
+  padding: 5rem 0;
+  background-color: var(--clr-dark);
+}
+
+.triptych-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.triptych-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* จัดเนื้อหาลงล่าง */
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  background-image: url('../images/panel-background.jpg'); /* <<-- ใช้รูปเดียวกันทั้งหมด */
+  background-size: 150%; /* ซูมรูปเข้าไปเล็กน้อย */
+  transition: background-size 0.8s ease;
+}
+
+/* ทำให้แต่ละ panel แสดงคนละส่วนของรูป */
+.triptych-panel:nth-child(1) { background-position: 25% 50%; }
+.triptych-panel:nth-child(2) { background-position: 50% 50%; }
+.triptych-panel:nth-child(3) { background-position: 75% 50%; }
+
+/* สร้าง Overlay ไล่ระดับสี */
+.triptych-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 40%, transparent 100%);
+  transition: background 0.4s ease;
+}
+
+/* เอฟเฟกต์เมื่อ Hover */
+.triptych-panel:hover {
+  background-size: 160%; /* ซูมรูปให้ใหญ่ขึ้น */
+}
+.triptych-panel:hover::before {
+  background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+}
+
+.triptych-panel__content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  transform: translateY(40px); /* ซ่อนคำอธิบายไว้ด้านล่าง */
+  transition: transform 0.4s ease;
+}
+
+.triptych-panel:hover .triptych-panel__content {
+  transform: translateY(0); /* ทำให้เนื้อหาทั้งหมดเลื่อนขึ้นมาเมื่อ hover */
+}
+
+.triptych-panel__title {
+  font-family: var(--font-redm);
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  line-height: 1.2;
+  margin: 0 0 0.5rem 0;
+}
+
+.triptych-panel__desc {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: #ddd;
+  opacity: 0; /* ซ่อนคำอธิบายไว้ก่อน */
+  transition: opacity 0.4s ease 0.1s; /* delay ให้โผล่ช้ากว่า title */
+}
+
+.triptych-panel:hover .triptych-panel__desc {
+  opacity: 1; /* แสดงคำอธิบายเมื่อ hover */
+}
+
+/* ========== FINAL HOMEPAGE DESIGN (Thai Font Specific) ========== */
+
+:root {
+  --font-redm: 'Rye', cursive; /* <<-- ฟอนต์หลัก (สำหรับภาษาอังกฤษ) */
+  --font-thai: 'SOV_MuekMod', sans-serif; /* <<-- ฟอนต์ใหม่ (สำหรับภาษาไทย) */
+  --color-redm: #c42c2c;
+}
+
+/* 1. HERO SCENE & CAMPFIRE EFFECT */
+.hero-campfire {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background-color: #0c0a1a;
+  background-image: 
+    radial-gradient(1px 1px at 20% 20%, #fff, transparent),
+    radial-gradient(1px 1px at 80% 10%, #fff, transparent),
+    radial-gradient(1px 1px at 50% 50%, #fff, transparent),
+    radial-gradient(2px 2px at 30% 70%, #fff, transparent),
+    radial-gradient(2px 2px at 90% 40%, #fff, transparent),
+    radial-gradient(1px 1px at 10% 90%, #fff, transparent);
+}
+.hero-campfire::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,200,0,0.5) 0%, rgba(255,100,0,0.4) 10%, rgba(255,69,0,0.2) 25%, rgba(255,69,0,0) 50%);
+  z-index: 1;
+  animation: flicker 6s infinite alternate;
+}
+@keyframes flicker {
+  0%   { transform: translateX(-50%) scale(1, 1); opacity: 0.7; }
+  50%  { transform: translateX(-49%) scale(0.98, 1.02); opacity: 0.6; }
+  100% { transform: translateX(-51%) scale(1, 1); opacity: 0.7; }
+}
+.sparks { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
+.sparks span { position: absolute; bottom: 0; left: 50%; width: 3px; height: 3px; background: #ffc400; border-radius: 50%; animation: sparkle-rise 5s infinite; opacity: 0; }
+@keyframes sparkle-rise {
+  0% { transform: translateY(0) translateX(0); opacity: 1; }
+  100% { transform: translateY(-90vh) translateX(var(--spread, 0)); opacity: 0; }
+}
+.sparks span:nth-child(1) { animation-duration: 4s; animation-delay: 0.5s; --spread: -150px; }
+.sparks span:nth-child(2) { animation-duration: 6s; animation-delay: 1.2s; --spread: 120px; }
+.sparks span:nth-child(3) { animation-duration: 5s; animation-delay: 2.5s; --spread: 200px; }
+
+
+/* 2. CONTENT & ANIMATION */
+.hero-campfire__content { position: relative; z-index: 3; padding: 1rem; }
+@keyframes ember-rise {
+  from { opacity: 0; transform: translateY(60px); filter: blur(2px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+.animate-ember { display: block; opacity: 0; animation: ember-rise 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards; animation-delay: var(--delay, 0s); }
+
+/* 3. TYPOGRAPHY & LOGO */
+.hero-campfire__logo { width: 160px; height: auto; margin: 0 auto 2rem auto; filter: brightness(1.2); }
+.hero-campfire__title {
+  font-family: var(--font-redm); /* <<-- กำหนดฟอนต์หลักเป็น Rye */
+  font-size: clamp(4rem, 12vw, 8rem);
+  color: var(--color-redm);
+  font-weight: normal;
+  line-height: 1.2;
+  text-shadow: 2px 2px 0px #000, 4px 4px 10px rgba(0,0,0,0.8);
+  letter-spacing: 2px;
+}
+.hero-campfire__desc { font-weight: 300; color: #ccc; font-size: 1.25rem; letter-spacing: 0.5px; margin-top: 1rem; margin-bottom: 2.5rem; text-shadow: 0 1px 3px rgba(0,0,0,1); }
+.hero-campfire__buttons .btn--accent { background-color: var(--color-redm); font-size: 1.1rem; padding: 0.8rem 2rem; border: none; }
+
+
+/* ===== ส่วนสำคัญ: เขียนทับฟอนต์เฉพาะภาษาไทย ===== */
+.hero-campfire__title span[data-lang="th"] {
+  font-family: var(--font-thai);
+}
+/* ทำให้ปุ่มภาษาไทยใช้ฟอนต์ตัวหนา (ถ้ามี) */
+.hero-campfire__buttons span[data-lang="th"] {
+  font-family: var(--font-thai);
+  font-weight: bold;
+}
+
+
+/* 4. FEATURES SECTION (Triptych) */
+.triptych-section { padding: 5rem 0; background-color: var(--clr-dark); }
+.triptych-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+.triptych-panel { display: flex; flex-direction: column; justify-content: flex-end; height: 500px; position: relative; overflow: hidden; border-radius: 8px; text-decoration: none; color: #fff; background-size: 150%; transition: background-size 0.8s ease; }
+.triptych-panel:nth-child(1) { background-image: url('../images/panel-background.jpg'); background-position: 25% 50%; }
+.triptych-panel:nth-child(2) { background-image: url('../images/panel-background.jpg'); background-position: 50% 50%; }
+.triptych-panel:nth-child(3) { background-image: url('../images/panel-background.jpg'); background-position: 75% 50%; }
+.triptych-panel::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 40%, transparent 100%); transition: background 0.4s ease; }
+.triptych-panel:hover { background-size: 160%; }
+.triptych-panel:hover::before { background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 60%, transparent 100%); }
+.triptych-panel__content { position: relative; z-index: 2; padding: 2rem; transform: translateY(40px); transition: transform 0.4s ease; }
+.triptych-panel:hover .triptych-panel__content { transform: translateY(0); }
+.triptych-panel__title { font-family: var(--font-redm); font-size: 2.5rem; text-shadow: 2px 2px 5px rgba(0,0,0,0.7); line-height: 1.2; margin: 0 0 0.5rem 0; }
+.triptych-panel__desc { font-size: 1rem; color: #ddd; opacity: 0; transition: opacity 0.4s ease 0.1s; }
+.triptych-panel:hover .triptych-panel__desc { opacity: 1; }
+
+/* เขียนทับฟอนต์การ์ดข้างล่างสำหรับภาษาไทย */
+.triptych-panel__title span[data-lang="th"] {
+  font-family: var(--font-thai);
+  font-weight: bold;
+}
+
+/* ===== THAI FONT OVERRIDE FOR DOSSIER DESIGN ===== */
+.dossier-title__main [data-lang="th"],
+.dossier-section__title [data-lang="th"],
+.dossier-stamp span[data-lang="th"] {
+  font-family: var(--font-thai-main);
+  font-weight: bold; /* ใช้ฟอนต์ตัวหนา */
+}
+
+.dossier-title__sub [data-lang="th"],
+.dossier-section__desc [data-lang="th"] {
+  font-family: var(--font-thai-main);
+  font-weight: normal; /* ใช้ฟอนต์ตัวปกติ */
+}
+
+/* กำหนดความกว้างของคอลัมน์ในตารางกฎ Roleplay โดยเฉพาะ */
+.rules-table th:nth-child(1), .rules-table td:nth-child(1) { width: 8%; }
+.rules-table th:nth-child(2), .rules-table td:nth-child(2) { width: 15%; }
+.rules-table th:nth-child(3), .rules-table td:nth-child(3) { width: 29%; }
+.rules-table th:nth-child(4), .rules-table td:nth-child(4) { width: 29%; }
+.rules-table th:nth-child(5), .rules-table td:nth-child(5) { width: 19%; }
+
+/* ========== SUBPAGE BACKGROUND DESIGN ========== */
+
+.body--subpage {
+  /* ใช้รูปภาพที่คุณเตรียมไว้เป็นพื้นหลัง */
+  background-image: 
+    /* นี่คือ Overlay สีดำโปร่งแสง (ความเข้ม 90%) เพื่อทำให้รูปจางลง */
+    linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
+    /* รูปภาพพื้นหลังจริง */
+    url('../images/subpage-bg.jpg');
+  
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; /* ทำให้พื้นหลังอยู่นิ่งๆ เวลาเลื่อนจอ */
+}
+
+/* ทำให้เนื้อหาหลักในหน้าย่อยมีพื้นหลังของตัวเองเพื่อให้อ่านง่ายขึ้น */
+.body--subpage .main {
+  background-color: rgba(10, 10, 10, 0.5); /* สีพื้นหลังของเนื้อหาหลักให้โปร่งแสงเล็กน้อย */
 }
